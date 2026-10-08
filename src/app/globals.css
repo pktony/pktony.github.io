@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root { --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --line: #e5e7eb; }
+.dark { --bg: #0f1115; --fg: #e8e8ea; --muted: #9ca3af; --line: #272a31; }
+
+body { background: var(--bg); color: var(--fg); font-family: system-ui, "Pretendard", sans-serif; }
