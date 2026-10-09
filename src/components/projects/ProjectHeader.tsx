@@ -9,7 +9,7 @@ export function ProjectHeader({ name, role, level, icon }: ProjectHeaderProps) {
   return (
     <>
       <div className="flex items-center gap-3">
-        {icon && <ProjectIcon name={icon} />}
+        {icon && <ProjectIcon icon={icon} />}
         <Heading className={`${level === 3 ? "text-2xl" : "text-xl"} font-bold leading-snug`}>{name}</Heading>
       </div>
       {role && <p className="mt-1 text-sm text-[var(--muted)]">{role}</p>}

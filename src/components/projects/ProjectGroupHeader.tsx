@@ -9,7 +9,7 @@ export function ProjectGroupHeader({ group }: { group: ProjectGroup }) {
       <p className="font-mono text-sm tabular-nums text-[var(--muted)] md:pt-2">{group.period}</p>
       <div>
         <div className="flex items-center gap-3">
-          {group.icon && <ProjectIcon name={group.icon} />}
+          {group.icon && <ProjectIcon icon={group.icon} />}
           <h3 className="text-3xl font-extrabold leading-tight">{group.title}</h3>
         </div>
         <p className="mt-3 text-[17px] font-medium">{group.summary}</p>
