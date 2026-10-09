@@ -27,12 +27,12 @@ export default function Home() {
     <>
       <ThemeInitScript />
       <SkipLink href="#main">본문으로 건너뛰기</SkipLink>
-      <SiteHeader handle={profile.handle} pdfFileTitle={`${profile.name} 포트폴리오`} nav={navigation} socials={socials} email={profile.email} />
+      <SiteHeader handle={profile.handle} nav={navigation} socials={socials} email={profile.email} />
       <Container className="pb-24">
         <main id="main" tabIndex={-1}>
         <PageTitle>{`${profile.name} 포트폴리오`}</PageTitle>
         <div id="top" />
-        <IntroduceSection photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
+        <IntroduceSection pdfFileTitle={`${profile.name} 포트폴리오`} photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />
         <ProjectsSection groups={projectGroups} featured={featuredProjects(projects)} extras={extraProjects(projects)} />
         <SkillsSection groups={skills} />
