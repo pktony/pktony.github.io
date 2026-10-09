@@ -32,6 +32,20 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "Moiime · 3D 아바타 에셋 SaaS",
+    period: "2026.06 ~ 현재",
+    role: "검색, 백엔드, SDK, 인프라 개발",
+    summary: "3D 아바타 에셋을 서비스에 가져다 쓸 수 있게 제공하는 SaaS",
+    bullets: [
+      "**자연어 파츠 검색·조립:** 자연어 요청에서 파츠별 프롬프트를 추출하고 vector·image·lexical 검색으로 약 1,600개 파츠에서 골라 아바타로 조립",
+      "**SDK:** SDK 제작과 문서 작성, API key 인증 구현. 데모 게임에 SDK를 연동해 사용성 검증",
+      "프로토타입 인수 후 앱·인증·아바타 생성 서버를 재설계해 **3주 만에 출시**",
+    ],
+    tech: ["TypeScript", "NestJS", "React", "Tailwind CSS v4", "three.js", "PostgreSQL", "MongoDB", "Vector Search", "S3", "CDN"],
+    links: [{ label: "moii.me", url: "https://moii.me" }],
+    featured: true,
+  },
+  {
     name: "Modular Grid Inventory",
     period: "2026.09",
     role: "설계, 구현, 제작 도구, 테스트",

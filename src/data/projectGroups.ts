@@ -147,39 +147,4 @@ export const projectGroups: ProjectGroup[] = [
       }),
     ],
   },
-  {
-    title: "Moiime · 3D 아바타 에셋 SaaS",
-    period: "2026.06 ~ 현재",
-    role: "검색, 백엔드, SDK, 인프라 개발",
-    summary: "3D 아바타 에셋을 서비스에 가져다 쓸 수 있게 제공하는 SaaS",
-    links: [{ label: "moii.me", url: "https://moii.me" }],
-    projects: [
-      sub({
-        name: "자연어 아바타 파츠 검색·조립",
-        summary: "자연어 조건으로 약 1,600개 파츠를 검색하고 아바타로 조립하는 기능",
-        bullets: [
-          "자연어 요청에서 파츠별 프롬프트를 추출하고 vector·image·lexical 검색 후 카테고리별로 선택해 아바타 조립",
-        ],
-        tech: ["TypeScript", "NestJS", "PostgreSQL", "MongoDB", "Vector Search", "S3", "CDN"],
-      }),
-      sub({
-        name: "SDK 제작과 API key 인증",
-        summary: "아바타 에셋을 외부 서비스에서 쓰도록 하는 SDK와 인증 체계",
-        bullets: [
-          "Web(three.js) 환경에서 쓰는 SDK 제작과 **SDK 문서** 작성",
-          "**API key 인증** 구현",
-          "데모 게임에 SDK를 직접 연동해 사용성을 검증하고, SDK와 삽입형 위젯을 분리",
-        ],
-        tech: ["TypeScript", "three.js", "React", "Tailwind CSS v4"],
-      }),
-      sub({
-        name: "프로토타입 인수와 서버 재설계",
-        summary: "인수한 프로토타입의 서버 구조를 다시 설계해 서비스 출시",
-        bullets: [
-          "앱·인증·아바타 생성 서버의 역할을 재설계해 인수 후 **3주 만에 출시**",
-        ],
-        tech: ["NestJS", "PostgreSQL", "MongoDB", "S3", "CDN"],
-      }),
-    ],
-  },
 ];
