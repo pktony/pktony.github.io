@@ -23,14 +23,14 @@
   color-scheme: light;
 }
 .dark {
-  --bg: #0f1217;
-  --fg: #e8eaf0;
-  --muted: #9aa3b2;
-  --line: #262c36;
-  --card: #171b22;
-  --accent: #8ea2ff;
-  --chip: #1f2533;
-  --chip-fg: #c5d0ff;
+  --bg: #1d2027;
+  --fg: #eceef3;
+  --muted: #aab2c1;
+  --line: #373d4a;
+  --card: #262a33;
+  --accent: #9db0ff;
+  --chip: #303646;
+  --chip-fg: #d3dbff;
   color-scheme: dark;
 }
 
