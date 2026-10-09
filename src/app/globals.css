@@ -66,13 +66,16 @@ a, button { transition: color 150ms ease, background-color 150ms ease, border-co
     --bg: #ffffff; --fg: #14171f; --muted: #4b5565; --line: #d4d8e0;
     --card: #f5f6f8; --accent: #2b3f9e; --chip: #eaeefc; --chip-fg: #2b3f9e;
   }
-  @page { margin: 14mm; }
+  @page { size: A4; margin: 14mm; }
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   header.sticky { position: static; backdrop-filter: none; }
   section[id] { margin-top: 2.5rem !important; }
   a[href="#main"] { display: none; }
   #projects a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; font-weight: 400; color: var(--muted); }
-  li, article { break-inside: avoid; }
+  /* 작은 항목만 쪽 중간에서 끊지 않는다. 한 쪽보다 큰 블록(article, 경력 항목)에 avoid를 걸면 빈 쪽이 생긴다 */
+  li, dl > div { break-inside: avoid; }
+  article, #experience ol > li { break-inside: auto; }
+  h2, h3, h4 { break-after: avoid; }
 }
 
 @media (prefers-reduced-motion: reduce) {
