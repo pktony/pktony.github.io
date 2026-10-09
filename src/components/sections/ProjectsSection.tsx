@@ -1,26 +1,24 @@
 import { MoreCasesHeading } from "@/components/projects/MoreCasesHeading";
-import { ProjectCard } from "@/components/projects/ProjectCard";
+import { ProjectGroupBlock } from "@/components/projects/ProjectGroupBlock";
+import { ProjectList } from "@/components/projects/ProjectList";
 import { Section } from "@/components/ui/Section";
-import type { Project } from "@/types/resume";
+import type { Project, ProjectGroup } from "@/types/resume";
 
-type ProjectsSectionProps = { featured: Project[]; extras: Project[] };
+type ProjectsSectionProps = { groups: ProjectGroup[]; featured: Project[]; extras: Project[] };
 
-export function ProjectsSection({ featured, extras }: ProjectsSectionProps) {
+export function ProjectsSection({ groups, featured, extras }: ProjectsSectionProps) {
   return (
     <Section id="projects" title="Projects">
-      <ul className="space-y-6">
-        {featured.map((p) => (
-          <ProjectCard key={p.name} project={p} />
+      <div className="space-y-20">
+        {groups.map((g) => (
+          <ProjectGroupBlock key={g.title} group={g} />
         ))}
-      </ul>
+        <ProjectList projects={featured} level={3} />
+      </div>
       {extras.length > 0 && (
         <>
           <MoreCasesHeading />
-          <ul className="grid gap-6 md:grid-cols-2">
-            {extras.map((p) => (
-              <ProjectCard key={p.name} project={p} compact />
-            ))}
-          </ul>
+          <ProjectList projects={extras} level={3} />
         </>
       )}
     </Section>

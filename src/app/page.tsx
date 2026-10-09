@@ -14,6 +14,7 @@ import { education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { navigation } from "@/data/navigation";
 import { profile } from "@/data/profile";
+import { projectGroups } from "@/data/projectGroups";
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { socials } from "@/data/socials";
@@ -31,7 +32,7 @@ export default function Home() {
         <div id="top" />
         <IntroduceSection photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />
-        <ProjectsSection featured={featuredProjects(projects)} extras={extraProjects(projects)} />
+        <ProjectsSection groups={projectGroups} featured={featuredProjects(projects)} extras={extraProjects(projects)} />
         <SkillsSection groups={skills} />
         <MoreSection education={education} awards={awards} certificates={certificates} />
         </main>

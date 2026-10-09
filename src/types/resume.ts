@@ -33,11 +33,20 @@ export type Experience = {
 
 export type Project = {
   name: string;
-  period: string;
-  role: string;
+  period?: string;
+  role?: string;
   summary: string;
   bullets: string[];
   tech: string[];
   links: ProjectLink[];
   featured: boolean;
+};
+
+export type ProjectGroup = {
+  title: string;
+  period: string;
+  role: string;
+  summary: string;
+  links: ProjectLink[];
+  projects: Project[];
 };
