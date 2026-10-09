@@ -27,7 +27,7 @@ export default function Home() {
       <SiteHeader handle={profile.handle} nav={navigation} socials={socials} email={profile.email} />
       <main id="main" tabIndex={-1} className="mx-auto max-w-4xl px-5 pb-24">
         <div id="top" />
-        <IntroduceSection name={profile.name} title={profile.title} paragraphs={profile.intro} />
+        <IntroduceSection photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />
         <ProjectsSection featured={featuredProjects(projects)} extras={extraProjects(projects)} />
         <SkillsSection groups={skills} />

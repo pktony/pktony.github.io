@@ -2,6 +2,7 @@ import type { Profile } from "@/types/resume";
 
 // **굵게** 표기 지원
 export const profile: Profile = {
+  photo: { src: "/profile.webp", alt: "벽화 앞을 걷고 있는 박상원", width: 480, height: 600 },
   name: "박상원",
   handle: "Pktony.",
   title: "Product Engineer · Unity & Web",

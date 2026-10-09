@@ -7,7 +7,10 @@ export type Credential = { title: string; period: string };
 export type SkillGroup = { label: string; items: string[] };
 export type ProjectLink = { label: string; url: string };
 
+export type Photo = { src: string; alt: string; width: number; height: number };
+
 export type Profile = {
+  photo: Photo;
   name: string;
   handle: string;
   title: string;
