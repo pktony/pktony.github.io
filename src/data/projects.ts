@@ -3,7 +3,7 @@ import type { Project } from "@/types/resume";
 export const projects: Project[] = [
   {
     name: "NCT WISH · WISH TOWN 위젯",
-    icon: { type: "image", src: "/project-icons/wish-town.webp" },
+    icon: "/project-icons/wish-town.webp",
     period: "2026.09 ~ 2026.10",
     role: "위젯, 관리자, 제작 도구, 인프라, 로그 관측 개발",
     summary: "NCT WISH 프로모션 페이지에 삽입하는 팬 참여 게임 위젯과, 기획자가 직접 쓰는 제작·운영 도구",
@@ -19,7 +19,7 @@ export const projects: Project[] = [
   },
   {
     name: "UMZIK · AI 스프라이트 애니메이션 생성 서비스",
-    icon: { type: "image", src: "/project-icons/umzik.webp" },
+    icon: "/project-icons/umzik.webp",
     period: "2026.08 ~ 2026.10",
     role: "제품 설계, 프론트엔드, 백엔드, 인프라, 결제, 운영 도구 개발",
     summary: "사진 한 장으로 스프라이트 애니메이션을 만드는 AI 생성 서비스",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   },
   {
     name: "Moiime · 3D 아바타 에셋 SaaS",
-    icon: { type: "image", src: "/project-icons/moiime.webp" },
+    icon: "/project-icons/moiime.webp",
     period: "2026.06 ~ 현재",
     role: "검색, 백엔드, SDK, 인프라 개발",
     summary: "3D 아바타 에셋을 서비스에 가져다 쓸 수 있게 제공하는 SaaS",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     name: "Modular Grid Inventory",
-    icon: { type: "social", name: "github" },
+    icon: "/project-icons/modular-grid-inventory.webp",
     period: "2026.09",
     role: "설계, 구현, 제작 도구, 테스트",
     summary: "Escape from Tarkov 스타일 격자 인벤토리 시스템. 중첩 가방·독립 포켓·수납 제한·스택을 지원하는 Unity 패키지",

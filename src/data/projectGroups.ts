@@ -8,7 +8,7 @@ const sub = (p: SubProject): Project => ({ links: [], featured: false, ...p });
 export const projectGroups: ProjectGroup[] = [
   {
     title: "Moii · 3D 소셜 서비스",
-    icon: { type: "image", src: "/project-icons/moii.webp" },
+    icon: "/project-icons/moii.webp",
     period: "2023.02 ~ 현재",
     role: "Unity 클라이언트, 백엔드 도메인 일부, 로그·알림 설계, 최종 MR 검토",
     summary: "글로벌 3D 소셜 서비스를 파티 게임으로 확장하며 클라이언트 성능·실시간 동기화·서비스 운영을 개선",
@@ -150,7 +150,7 @@ export const projectGroups: ProjectGroup[] = [
   },
   {
     title: "맛집여지도 · 방송 맛집 지도",
-    icon: { type: "image", src: "/project-icons/matzipmap.webp" },
+    icon: "/project-icons/matzipmap.webp",
     period: "2026.07 ~ 현재",
     summary:
       "방송·유튜브 맛집 3,451곳을 모은 지도 서비스. 웹, 관리자, 수집기, 앱 개발·운영. 광고비 0원으로 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",
