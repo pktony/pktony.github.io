@@ -6,6 +6,13 @@ export const experience: Experience[] = [
     role: "개발2팀 팀장",
     period: "2023.02 ~ 현재",
     badges: ["Unity Client", "Backend", "DevOps", "Team Lead"],
+    serviceStats: {
+      title: "Moii 서비스 지표",
+      items: [
+        { value: "약 59만", label: "누적 다운로드", note: "Google Play 49만 · App Store 9.88만" },
+        { value: "99.7%", label: "앱 안정성", note: "Android 크래시 없는 사용자 비율 (Google Play)" },
+      ],
+    },
     bullets: [
       "**Moii · 3D 소셜 서비스:** 클라이언트 성능, 실시간 동기화, 서비스 운영 전반 개발. 개발자 4명이 단일 서버를 **19개 서비스로 분리**하고, 로그·알림 설계와 최종 MR 검토를 담당",
       "**성능 최적화:** JSON → Protobuf 전환으로 에셋 용량 70% 절감, Asset Bundle 중복 셰이더 정리로 Shader 메모리 0.83GB → 약 1MB",

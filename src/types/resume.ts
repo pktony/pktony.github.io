@@ -18,11 +18,15 @@ export type Profile = {
   intro: string[];
 };
 
+export type ServiceStat = { value: string; label: string; note: string };
+export type ServiceStats = { title: string; items: ServiceStat[] };
+
 export type Experience = {
   company: string;
   role: string;
   period: string;
   badges: string[];
+  serviceStats?: ServiceStats;
   bullets: string[];
   metrics: Metric[];
 };
