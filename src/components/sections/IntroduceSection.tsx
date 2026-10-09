@@ -9,7 +9,7 @@ export function IntroduceSection({ name, title, paragraphs }: IntroduceSectionPr
       <p className="text-xl font-bold">
         {name} <span className="font-medium text-[var(--muted)]">· {title}</span>
       </p>
-      <div className="mt-4 max-w-[68ch] space-y-5 text-[17px]">
+      <div className="mt-5 max-w-[var(--measure)] space-y-6">
         {paragraphs.map((p) => (
           <p key={p}>
             <Rich text={p} />
