@@ -7,9 +7,9 @@ type SectionProps = { id: string; title: string; action?: ReactNode; children: R
 export function Section({ id, title, action, children }: SectionProps) {
   const headingId = `${id}-title`;
   return (
-    <section id={id} aria-labelledby={headingId} className="mt-16">
+    <section id={id} aria-labelledby={headingId} className="mt-section">
       <SectionHeading id={headingId} title={title} action={action} />
-      <div className="mt-8">{children}</div>
+      <div className="mt-section-body">{children}</div>
     </section>
   );
 }

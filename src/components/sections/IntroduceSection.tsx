@@ -12,11 +12,11 @@ export function IntroduceSection({ photo, name, title, pdfFileTitle, paragraphs 
   return (
     <Section id="introduce" title="Introduce" action={<PdfExportButton fileTitle={pdfFileTitle} />}>
       <div className="flow-root max-w-[56rem]">
-        <p className="mb-5 text-xl font-bold">
+        <p className="mb-para text-xl font-bold">
           {name} <span className="font-medium text-[var(--muted)]">· {title}</span>
         </p>
         <ProfilePhoto photo={photo} className="mb-6 block w-36 sm:float-left sm:mb-3 sm:mr-8 sm:w-44 md:w-48" />
-        <div className="space-y-5">
+        <div className="space-y-para">
           {paragraphs.map((p) => (
             <p key={p}>
               <Rich text={p} />

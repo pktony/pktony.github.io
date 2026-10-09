@@ -14,7 +14,7 @@ export function ExperienceItem({ experience: e }: { experience: Experience }) {
         <p className="mt-1 text-[var(--muted)]">{e.role}</p>
         <ChipList items={e.badges} label="담당 영역" variant="outline" size="sm" className="mt-4" />
         <ServiceStats stats={e.serviceStats} />
-        <BulletList items={e.bullets} className="mt-6 max-w-[var(--measure)] space-y-3" />
+        <BulletList items={e.bullets} className="mt-block max-w-[var(--measure)]" />
         <MetricGrid metrics={e.metrics} />
       </div>
     </li>
