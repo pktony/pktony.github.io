@@ -9,8 +9,8 @@ export const experience: Experience[] = [
     serviceStats: {
       title: "Moii 서비스 지표",
       items: [
-        { value: "약 59만", label: "누적 다운로드", note: "Google Play 49만 · App Store 9.88만" },
-        { value: "99.7%", label: "앱 안정성", note: "Android 크래시 없는 사용자 비율 (Google Play)" },
+        { value: "약 59만", label: "누적 다운로드" },
+        { value: "99.7%", label: "앱 안정성" },
       ],
     },
     bullets: [

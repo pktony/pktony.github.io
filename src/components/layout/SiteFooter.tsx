@@ -6,7 +6,7 @@ export function SiteFooter({ name, email, year }: SiteFooterProps) {
       <p>
         © {year} {name}
       </p>
-      <a href={`mailto:${email}`} className="underline underline-offset-4 hover:text-[var(--fg)]">
+      <a href={`mailto:${email}`} className="inline-flex min-h-6 items-center underline underline-offset-4 hover:text-[var(--fg)]">
         {email}
       </a>
     </footer>

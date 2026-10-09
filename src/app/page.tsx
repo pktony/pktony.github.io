@@ -1,3 +1,4 @@
+import { PageTitle } from "@/components/layout/PageTitle";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
@@ -29,6 +30,7 @@ export default function Home() {
       <SiteHeader handle={profile.handle} nav={navigation} socials={socials} email={profile.email} />
       <Container className="pb-24">
         <main id="main" tabIndex={-1}>
+        <PageTitle>{`${profile.name} 포트폴리오`}</PageTitle>
         <div id="top" />
         <IntroduceSection photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />

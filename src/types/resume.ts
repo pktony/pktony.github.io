@@ -18,7 +18,7 @@ export type Profile = {
   intro: string[];
 };
 
-export type ServiceStat = { value: string; label: string; note: string };
+export type ServiceStat = { value: string; label: string };
 export type ServiceStats = { title: string; items: ServiceStat[] };
 
 export type Experience = {
