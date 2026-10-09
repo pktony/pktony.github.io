@@ -6,7 +6,7 @@ type MoreSectionProps = { education: Credential[]; awards: Credential[]; certifi
 
 export function MoreSection({ education, awards, certificates }: MoreSectionProps) {
   return (
-    <Section id="more" eyebrow="04 / 기타" title="Education & More">
+    <Section id="more" title="Education & More">
       <div className="grid gap-10 md:grid-cols-3">
         <CredentialColumn heading="Education" items={education} />
         <CredentialColumn heading="Awards" items={awards} />

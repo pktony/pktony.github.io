@@ -7,7 +7,7 @@ type ProjectsSectionProps = { featured: Project[]; extras: Project[] };
 
 export function ProjectsSection({ featured, extras }: ProjectsSectionProps) {
   return (
-    <Section id="projects" eyebrow="02 / 프로젝트" title="Projects">
+    <Section id="projects" title="Projects">
       <ul className="space-y-6">
         {featured.map((p) => (
           <ProjectCard key={p.name} project={p} />

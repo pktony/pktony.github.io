@@ -5,7 +5,7 @@ type IntroduceSectionProps = { name: string; title: string; paragraphs: string[]
 
 export function IntroduceSection({ name, title, paragraphs }: IntroduceSectionProps) {
   return (
-    <Section id="introduce" eyebrow="00 / 소개" title="Introduce">
+    <Section id="introduce" title="Introduce">
       <p className="text-xl font-bold">
         {name} <span className="font-medium text-[var(--muted)]">· {title}</span>
       </p>

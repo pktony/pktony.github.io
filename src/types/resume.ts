@@ -1,4 +1,4 @@
-export type SocialIconName = "github" | "blog";
+export type SocialIconName = "github" | "tistory";
 
 export type Social = { label: string; url: string; icon: SocialIconName };
 export type NavItem = { href: string; label: string };
