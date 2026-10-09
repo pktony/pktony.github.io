@@ -16,7 +16,7 @@ export function IntroduceSection({ photo, name, title, pdfFileTitle, paragraphs 
         <p className="text-xl font-bold">
           {name} <span className="font-medium text-[var(--muted)]">· {title}</span>
         </p>
-        <div className="mt-5 space-y-6">
+        <div className="mt-5 space-y-5">
           {paragraphs.map((p) => (
             <p key={p}>
               <Rich text={p} />

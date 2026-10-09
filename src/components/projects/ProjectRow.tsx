@@ -9,7 +9,7 @@ type ProjectRowProps = { project: Project; level: 3 | 4 };
 // 박스 없이 구분선으로 나뉘는 한 행: 왼쪽 기간 / 오른쪽 내용 (Experience와 같은 구조)
 export function ProjectRow({ project: p, level }: ProjectRowProps) {
   return (
-    <li className="grid gap-3 py-10 md:grid-cols-[11rem_1fr] md:gap-8">
+    <li className="grid gap-3 py-7 md:grid-cols-[11rem_1fr] md:gap-8">
       <p className="font-mono text-sm tabular-nums text-[var(--muted)] md:pt-1.5">{p.period}</p>
       <div>
         <ProjectHeader name={p.name} role={p.role} level={level} />

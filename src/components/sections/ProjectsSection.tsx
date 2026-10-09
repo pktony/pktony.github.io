@@ -9,7 +9,7 @@ type ProjectsSectionProps = { groups: ProjectGroup[]; featured: Project[]; extra
 export function ProjectsSection({ groups, featured, extras }: ProjectsSectionProps) {
   return (
     <Section id="projects" title="Projects">
-      <div className="space-y-20">
+      <div className="space-y-14">
         {groups.map((g) => (
           <ProjectGroupBlock key={g.title} group={g} />
         ))}
