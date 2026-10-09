@@ -2,7 +2,58 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root { --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --line: #e5e7eb; }
-.dark { --bg: #0f1115; --fg: #e8e8ea; --muted: #9ca3af; --line: #272a31; }
+:root {
+  --bg: #ffffff;
+  --fg: #18181b;
+  --muted: #52525b;
+  --line: #e4e4e7;
+  --card: #f7f7f8;
+  --accent: #4f46e5;
+  --chip: #eef0ff;
+  --chip-fg: #3730a3;
+  color-scheme: light;
+}
+.dark {
+  --bg: #1f2023;
+  --fg: #f2f2f2;
+  --muted: #a1a1aa;
+  --line: #3a3b40;
+  --card: #26272b;
+  --accent: #8b8cf8;
+  --chip: #2e2f45;
+  --chip-fg: #c7c8ff;
+  color-scheme: dark;
+}
 
-body { background: var(--bg); color: var(--fg); font-family: system-ui, "Pretendard", sans-serif; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+strong { font-weight: 700; }
+
+/* gradient-border card (metrics / projects) */
+.gcard {
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    linear-gradient(135deg, #6366f1, #a855f7 55%, #ec4899) border-box;
+  border: 1px solid transparent;
+}
+
+a, button { transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, opacity 150ms ease; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* theme toggle icons */
+.icon-sun { display: none; }
+.dark .icon-sun { display: block; }
+.dark .icon-moon { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
