@@ -12,7 +12,7 @@ export function PdfExportButton({ fileTitle }: PdfExportButtonProps) {
       type="button"
       onClick={() => printPage(fileTitle)}
       title="인쇄 대화상자에서 'PDF로 저장'을 선택하세요"
-      className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full border border-[var(--line)] px-4 text-sm font-medium text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)] print:hidden"
+      className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full border border-line px-4 text-meta font-medium text-muted hover:border-accent hover:text-accent print:hidden"
     >
       <FileDownIcon />
       PDF로 저장

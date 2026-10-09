@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 type ChipProps = { children: ReactNode; variant?: "tonal" | "outline"; size?: "sm" | "md" };
 
 const variantClass = {
-  tonal: "bg-[var(--chip)] text-[var(--chip-fg)]",
-  outline: "border border-[var(--line)]",
+  tonal: "bg-chip text-chip-ink",
+  outline: "border border-line",
 } as const;
 
 const sizeClass = {
-  sm: "px-2.5 py-0.5 text-xs",
-  md: "px-3 py-1 text-sm",
+  sm: "px-2.5 py-0.5 text-caption",
+  md: "px-3 py-1 text-meta",
 } as const;
 
 export function Chip({ children, variant = "tonal", size = "md" }: ChipProps) {

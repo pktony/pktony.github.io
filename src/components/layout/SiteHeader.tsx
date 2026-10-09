@@ -12,7 +12,7 @@ type SiteHeaderProps = { handle: string; nav: NavItem[]; socials: Social[]; emai
 // 인쇄(PDF)에서는 로고(사이트 주소)만 남기고 나머지는 숨긴다
 export function SiteHeader({ handle, nav, socials, email }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--bg)]/85 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line bg-canvas/85 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
         <Logo text={handle} />
         <SectionNav items={nav} />

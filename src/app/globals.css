@@ -2,93 +2,113 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ── Layout tokens (Tailwind 유틸리티로 바로 쓴다: leading-list, space-y-list, mt-block …) ──
-   행간은 글 종류별로, 간격은 4pt 배수로 의미를 붙여 둔다. 값은 여기서만 바꾼다. */
-@theme {
-  /* line-height */
-  --leading-heading: 1.3;
+/* ── Design tokens ─────────────────────────────────────────
+   모든 색·글자·간격 값은 여기서만 정한다. 컴포넌트는 유틸리티(text-muted, text-title, mt-block …)로만 쓴다.
+   색: Ink & Indigo. 차가운 중립색 + 인디고 한 가지. 라이트·다크 모두 본문 ≥ 12:1, 보조 ≥ 6.7:1, 강조 ≥ 5.6:1
+   글자: 7단 스케일(12·14·17·20·24·30·36px, 비율 약 1.2). 크기마다 행간을 함께 묶었다.
+   ────────────────────────────────────────────────────────── */
+@theme static {
+  /* font */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* color (light). 다크·인쇄 값은 아래에서 같은 변수를 덮어쓴다 */
+  --color-canvas: #ffffff; /* 페이지 배경 */
+  --color-ink: #14171f; /* 본문·제목 */
+  --color-muted: #4b5565; /* 보조 텍스트(기간, 역할, 라벨) */
+  --color-line: #e3e6ec; /* 구분선·테두리 */
+  --color-card: #f5f6f8; /* 카드·호버 배경 */
+  --color-accent: #3b5bdb; /* 링크·강조 */
+  --color-chip: #eaeefc; /* 칩 배경 */
+  --color-chip-ink: #2b3f9e; /* 칩 글자 */
+
+  /* type: 역할 이름으로 쓴다. 크기와 행간이 한 쌍 */
+  --text-*: initial; /* Tailwind 기본 크기(text-sm 등)는 끄고 아래 7단만 허용 */
+  --text-caption: 0.75rem; /* 12px 칩·표 머리글 */
+  --text-caption--line-height: 1.35;
+  --text-meta: 0.875rem; /* 14px 기간·역할·링크·라벨 */
+  --text-meta--line-height: 1.45;
+  --text-body: 1.0625rem; /* 17px 본문·소개 한 줄 */
+  --text-body--line-height: 1.6;
+  --text-subtitle: 1.25rem; /* 20px 이름·하위 프로젝트 제목·지표 값 */
+  --text-subtitle--line-height: 1.4;
+  --text-title: 1.5rem; /* 24px 경력·프로젝트 제목 */
+  --text-title--line-height: 1.3;
+  --text-headline: 1.875rem; /* 30px 그룹 제목·섹션 제목(모바일) */
+  --text-headline--line-height: 1.25;
+  --text-display: 2.25rem; /* 36px 섹션 제목·서비스 지표 */
+  --text-display--line-height: 1.2;
+
+  /* line-height (글 종류별) */
   --leading-body: 1.6;
   --leading-list: 1.5;
-  /* type */
-  --text-lead: 1.0625rem; /* 프로젝트·그룹 소개 한 줄 (17px) */
-  /* spacing */
+
+  /* spacing (4pt 배수, 의미별) */
   --spacing-list: 0.375rem; /* 불릿 항목 사이 6px */
   --spacing-para: 1.25rem; /* 문단 사이 20px */
-  --spacing-block: 1rem; /* 한 항목 안의 블록(요약·불릿·태그) 사이 16px */
+  --spacing-block: 1rem; /* 한 항목 안 블록(요약·불릿·태그) 사이 16px */
   --spacing-row: 1.75rem; /* 목록 행 위아래 28px */
   --spacing-section: 4rem; /* 섹션 사이 64px */
   --spacing-section-body: 2rem; /* 섹션 제목과 본문 사이 32px */
+
+  /* 글줄 길이 */
+  --container-measure: 72ch;
 }
 
-/* ── Design tokens ─────────────────────────────────────────
-   Ink & Indigo: 차가운 중립색 + 인디고 한 가지.
-   대비(WCAG): 본문 ≥ 12:1, 보조 텍스트 ≥ 6.5:1, 강조 ≥ 5.4:1
-   ────────────────────────────────────────────────────────── */
-:root {
-  /* color */
-  --bg: #ffffff;
-  --fg: #14171f;
-  --muted: #4b5565;
-  --line: #e3e6ec;
-  --card: #f5f6f8;
-  --accent: #3b5bdb;
-  --chip: #eaeefc;
-  --chip-fg: #2b3f9e;
-  /* type */
-  --font-size-body: 1.0625rem; /* 17px */
-  --measure: 72ch; /* 글줄 길이 (폭 확장에 맞춰 조정) */
-  color-scheme: light;
-}
 .dark {
-  --bg: #1d2027;
-  --fg: #eceef3;
-  --muted: #aab2c1;
-  --line: #373d4a;
-  --card: #262a33;
-  --accent: #9db0ff;
-  --chip: #303646;
-  --chip-fg: #d3dbff;
-  color-scheme: dark;
+  --color-canvas: #1d2027;
+  --color-ink: #eceef3;
+  --color-muted: #aab2c1;
+  --color-line: #373d4a;
+  --color-card: #262a33;
+  --color-accent: #9db0ff;
+  --color-chip: #303646;
+  --color-chip-ink: #d3dbff;
 }
 
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-body {
-  background: var(--bg);
-  color: var(--fg);
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-  font-size: var(--font-size-body);
-  line-height: var(--leading-body);
-  letter-spacing: -0.01em;
-  -webkit-font-smoothing: antialiased;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  text-wrap: pretty;
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4 { letter-spacing: -0.025em; text-wrap: balance; }
+  strong { font-weight: 700; }
+  .font-mono { letter-spacing: 0; }
+
+  a, button { transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, opacity 150ms ease; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: var(--color-accent); color: var(--color-canvas); }
+
+  /* theme toggle icons */
+  .icon-sun { display: none; }
+  .dark .icon-sun { display: block; }
+  .dark .icon-moon { display: none; }
 }
-h1, h2, h3, h4 { letter-spacing: -0.025em; line-height: var(--leading-heading); text-wrap: balance; }
-strong { font-weight: 700; }
-.font-mono { font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: 0; }
-
-a, button { transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, opacity 150ms ease; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
-::selection { background: var(--accent); color: var(--bg); }
-
-/* theme toggle icons */
-.icon-sun { display: none; }
-.dark .icon-sun { display: block; }
-.dark .icon-moon { display: none; }
 
 /* 인쇄·PDF: 밝은 색, 헤더 고정 해제, 링크 주소 병기 */
 @media print {
   :root, .dark {
-    --bg: #ffffff; --fg: #14171f; --muted: #4b5565; --line: #d4d8e0;
-    --card: #f5f6f8; --accent: #2b3f9e; --chip: #eaeefc; --chip-fg: #2b3f9e;
+    --color-canvas: #ffffff; --color-ink: #14171f; --color-muted: #4b5565; --color-line: #d4d8e0;
+    --color-card: #f5f6f8; --color-accent: #2b3f9e; --color-chip: #eaeefc; --color-chip-ink: #2b3f9e;
   }
   @page { size: A4; margin: 14mm; }
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   header.sticky { position: static; backdrop-filter: none; }
   section[id] { margin-top: calc(var(--spacing-section) * 0.625) !important; }
   a[href="#main"] { display: none; }
-  #projects a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; font-weight: 400; color: var(--muted); }
+  #projects a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; font-weight: 400; color: var(--color-muted); }
   /* 작은 항목만 쪽 중간에서 끊지 않는다. 한 쪽보다 큰 블록(article, 경력 항목)에 avoid를 걸면 빈 쪽이 생긴다 */
   li, dl > div { break-inside: avoid; }
   article, #experience ol > li { break-inside: auto; }

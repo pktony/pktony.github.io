@@ -6,14 +6,14 @@ import { ProjectLinks } from "./ProjectLinks";
 export function ProjectGroupHeader({ group }: { group: ProjectGroup }) {
   return (
     <div className="grid gap-3 pb-row md:grid-cols-[11rem_1fr] md:gap-8">
-      <p className="font-mono text-sm tabular-nums text-[var(--muted)] md:pt-2">{group.period}</p>
+      <p className="font-mono text-meta tabular-nums text-muted md:pt-2">{group.period}</p>
       <div>
         <div className="flex items-center gap-3">
           {group.icon && <ProjectIcon src={group.icon} />}
-          <h3 className="text-3xl font-extrabold leading-tight">{group.title}</h3>
+          <h3 className="text-headline font-extrabold">{group.title}</h3>
         </div>
-        <p className="mt-3 text-lead font-medium">{group.summary}</p>
-        {group.role && <p className="mt-2 text-sm text-[var(--muted)]">{group.role}</p>}
+        <p className="mt-3 text-body font-medium">{group.summary}</p>
+        {group.role && <p className="mt-2 text-meta text-muted">{group.role}</p>}
         <ProjectLinks links={group.links} />
       </div>
     </div>

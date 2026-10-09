@@ -7,12 +7,12 @@ export function SectionHeading({ id, title, action }: SectionHeadingProps) {
   return (
     <>
       <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
-        <h2 id={id} className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h2 id={id} className="text-headline font-extrabold tracking-tight sm:text-display">
           {title}
         </h2>
         {action}
       </div>
-      <div className="mt-5 h-px bg-[var(--line)]" />
+      <div className="mt-5 h-px bg-line" />
     </>
   );
 }

@@ -7,7 +7,7 @@ export function SectionNav({ items }: { items: NavItem[] }) {
         <a
           key={item.href}
           href={item.href}
-          className="rounded-full px-3 py-2 text-sm text-[var(--muted)] hover:bg-[var(--card)] hover:text-[var(--fg)]"
+          className="rounded-full px-3 py-2 text-meta text-muted hover:bg-card hover:text-ink"
         >
           {item.label}
         </a>

@@ -8,7 +8,7 @@ export function ProjectIcon({ src }: { src: string }) {
       width={40}
       height={40}
       decoding="async"
-      className="h-10 w-10 shrink-0 rounded-xl border border-[var(--line)] object-cover"
+      className="h-10 w-10 shrink-0 rounded-xl border border-line object-cover"
     />
   );
 }

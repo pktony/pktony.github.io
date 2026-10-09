@@ -13,7 +13,7 @@ export function ProfilePhoto({ photo, className = "" }: ProfilePhotoProps) {
       height={photo.height}
       fetchPriority="high"
       decoding="async"
-      className={`aspect-[4/5] rounded-2xl border border-[var(--line)] object-cover object-[50%_40%] ${className}`}
+      className={`aspect-[4/5] rounded-2xl border border-line object-cover object-[50%_40%] ${className}`}
     />
   );
 }

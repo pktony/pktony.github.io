@@ -10,7 +10,7 @@ export function ExternalLink({ href, children }: ExternalLinkProps) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex min-h-6 items-center gap-1 font-semibold text-[var(--accent)] underline-offset-4 hover:underline"
+      className="inline-flex min-h-6 items-center gap-1 font-semibold text-accent underline-offset-4 hover:underline"
     >
       {children}
       <ExternalLinkIcon />
