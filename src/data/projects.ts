@@ -2,6 +2,20 @@ import type { Project } from "@/types/resume";
 
 export const projects: Project[] = [
   {
+    name: "맛집여지도 · 방송 맛집 지도",
+    icon: "/project-icons/matzipmap.webp",
+    period: "2026.07 ~ 현재",
+    summary: "방송·유튜브 맛집 3,451곳을 모은 지도 서비스. 광고비 0원으로 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",
+    bullets: [
+      "GitHub Actions로 매일 수집하고, LLM이 상호를 추출해 네이버 지역검색과 대조한 뒤 검수 대기로 등록. 검수 에이전트가 매일 승인·반려·보류를 판단",
+      "LLM의 상호 지어내기를 막으려 원문 인용을 받아 본문에 없으면 폐기. 같은 가게 중복은 좌표 45m와 상호 유사도로 판정",
+      "DB 전송량 대부분을 차지하던 지도 조회에 엣지 캐시를 적용하고, 공개 장소 3천여 건을 서버 메모리에 올려 필터와 클러스터링을 처리해 DB 요청 제거",
+    ],
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Supabase", "Vercel", "GitHub Actions", "LLM"],
+    links: [{ label: "matzipmap.com", url: "https://www.matzipmap.com" }],
+    featured: true,
+  },
+  {
     name: "NCT WISH · WISH TOWN 위젯",
     icon: "/project-icons/wish-town.webp",
     period: "2026.09 ~ 2026.10",

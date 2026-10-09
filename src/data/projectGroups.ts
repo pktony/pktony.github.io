@@ -148,42 +148,4 @@ export const projectGroups: ProjectGroup[] = [
       }),
     ],
   },
-  {
-    title: "맛집여지도 · 방송 맛집 지도",
-    icon: "/project-icons/matzipmap.webp",
-    period: "2026.07 ~ 현재",
-    summary:
-      "방송·유튜브 맛집 3,451곳을 모은 지도 서비스. 웹, 관리자, 수집기, 앱 개발·운영. 광고비 0원으로 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",
-    links: [{ label: "matzipmap.com", url: "https://www.matzipmap.com" }],
-    projects: [
-      sub({
-        name: "수집·검증 자동화",
-        summary: "영상에서 식당을 찾아 지도에 올리는 과정을 매일 자동 수행",
-        bullets: [
-          "GitHub Actions로 매일 수집하고, LLM이 상호를 추출해 네이버 지역검색과 대조한 뒤 검수 대기로 등록. 검수 에이전트가 매일 승인·반려·보류를 판단",
-          "LLM의 상호 지어내기를 막으려 원문 인용을 받아 본문에 없으면 폐기. 같은 가게 중복은 좌표 45m와 상호 유사도로 판정",
-        ],
-        tech: ["Next.js", "Prisma", "GitHub Actions", "LLM"],
-      }),
-      sub({
-        name: "지도 조회 최적화",
-        summary: "DB 전송량 대부분을 차지하던 지도 조회를 캐시 구조로 전환",
-        bullets: [
-          "엣지 캐시 적용 후, 공개 장소 3천여 건을 서버 메모리에 올려 필터와 격자 클러스터링을 메모리에서 처리해 DB 요청 제거",
-          "사진 저장소를 Supabase Storage에서 OCI로 이전",
-        ],
-        tech: ["Vercel", "Supabase", "OCI"],
-      }),
-      sub({
-        name: "안드로이드 앱 (출시 준비)",
-        period: "2026.08",
-        summary: "웹을 Expo WebView 앱으로 감싸 스토어 출시 준비",
-        bullets: [
-          "화면과 로직은 웹에 두고 구글 로그인, 푸시, 공유만 네이티브로 구현. 웹 배포가 앱에 즉시 반영",
-          "릴리스 키 서명 AAB 빌드까지 완료",
-        ],
-        tech: ["Expo", "React Native", "TypeScript"],
-      }),
-    ],
-  },
 ];
