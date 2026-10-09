@@ -6,6 +6,7 @@ import { MoreSection } from "@/components/sections/MoreSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { ThemeInitScript } from "@/components/theme/ThemeInitScript";
+import { Container } from "@/components/ui/Container";
 import { SkipLink } from "@/components/ui/SkipLink";
 import { awards } from "@/data/awards";
 import { certificates } from "@/data/certificates";
@@ -25,15 +26,17 @@ export default function Home() {
       <ThemeInitScript />
       <SkipLink href="#main">본문으로 건너뛰기</SkipLink>
       <SiteHeader handle={profile.handle} nav={navigation} socials={socials} email={profile.email} />
-      <main id="main" tabIndex={-1} className="mx-auto max-w-4xl px-5 pb-24">
+      <Container className="pb-24">
+        <main id="main" tabIndex={-1}>
         <div id="top" />
         <IntroduceSection photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />
         <ProjectsSection featured={featuredProjects(projects)} extras={extraProjects(projects)} />
         <SkillsSection groups={skills} />
         <MoreSection education={education} awards={awards} certificates={certificates} />
+        </main>
         <SiteFooter name={profile.name} email={profile.email} year={new Date().getFullYear()} />
-      </main>
+      </Container>
     </>
   );
 }

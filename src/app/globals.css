@@ -19,7 +19,7 @@
   /* type */
   --font-size-body: 1.0625rem; /* 17px */
   --line-height-body: 1.85;
-  --measure: 66ch; /* 글줄 길이 */
+  --measure: 72ch; /* 글줄 길이 (폭 확장에 맞춰 조정) */
   color-scheme: light;
 }
 .dark {

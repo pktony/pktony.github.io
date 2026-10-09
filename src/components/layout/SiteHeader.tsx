@@ -1,4 +1,5 @@
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { Container } from "@/components/ui/Container";
 import type { NavItem, Social } from "@/types/resume";
 import { Logo } from "./Logo";
 import { MailLink } from "./MailLink";
@@ -11,7 +12,7 @@ type SiteHeaderProps = { handle: string; nav: NavItem[]; socials: Social[]; emai
 export function SiteHeader({ handle, nav, socials, email }: SiteHeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--bg)]/85 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-4xl items-center justify-between px-5">
+      <Container className="flex h-16 items-center justify-between">
         <Logo text={handle} />
         <SectionNav items={nav} />
         <div className="flex items-center">
@@ -19,7 +20,7 @@ export function SiteHeader({ handle, nav, socials, email }: SiteHeaderProps) {
           <MailLink email={email} />
           <ThemeToggle />
         </div>
-      </div>
+      </Container>
     </header>
   );
 }
