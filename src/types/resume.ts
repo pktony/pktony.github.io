@@ -46,7 +46,7 @@ export type Project = {
 export type ProjectGroup = {
   title: string;
   period: string;
-  role: string;
+  role?: string;
   summary: string;
   links: ProjectLink[];
   projects: Project[];

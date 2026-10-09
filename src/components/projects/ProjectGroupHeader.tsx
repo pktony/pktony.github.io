@@ -9,7 +9,7 @@ export function ProjectGroupHeader({ group }: { group: ProjectGroup }) {
       <div>
         <h3 className="text-3xl font-extrabold leading-tight">{group.title}</h3>
         <p className="mt-3 text-[17px] font-medium">{group.summary}</p>
-        <p className="mt-2 text-sm text-[var(--muted)]">{group.role}</p>
+        {group.role && <p className="mt-2 text-sm text-[var(--muted)]">{group.role}</p>}
         <ProjectLinks links={group.links} />
       </div>
     </div>
