@@ -8,6 +8,7 @@ const sub = (p: SubProject): Project => ({ links: [], featured: false, ...p });
 export const projectGroups: ProjectGroup[] = [
   {
     title: "Moii · 3D 소셜 서비스",
+    icon: "avatar",
     period: "2023.02 ~ 현재",
     role: "Unity 클라이언트, 백엔드 도메인 일부, 로그·알림 설계, 최종 MR 검토",
     summary: "글로벌 3D 소셜 서비스를 파티 게임으로 확장하며 클라이언트 성능·실시간 동기화·서비스 운영을 개선",
@@ -149,6 +150,7 @@ export const projectGroups: ProjectGroup[] = [
   },
   {
     title: "맛집여지도 · 방송 맛집 지도",
+    icon: "map",
     period: "2026.07 ~ 현재",
     summary:
       "방송·유튜브에 나온 식당 3,451곳을 지도에서 찾는 서비스. 웹, 관리자, 자동 수집기, 앱까지 개발·운영. 광고비 없이 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",

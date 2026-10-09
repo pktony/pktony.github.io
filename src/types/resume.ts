@@ -5,6 +5,7 @@ export type NavItem = { href: string; label: string };
 export type Metric = { value: string; label: string };
 export type Credential = { title: string; period: string };
 export type SkillGroup = { label: string; items: string[] };
+export type ProjectIconName = "avatar" | "map" | "widget" | "sprite" | "cube" | "grid";
 export type ProjectLink = { label: string; url: string };
 
 export type Photo = { src: string; alt: string; width: number; height: number };
@@ -34,6 +35,7 @@ export type Experience = {
 
 export type Project = {
   name: string;
+  icon?: ProjectIconName;
   period?: string;
   role?: string;
   summary: string;
@@ -45,6 +47,7 @@ export type Project = {
 
 export type ProjectGroup = {
   title: string;
+  icon?: ProjectIconName;
   period: string;
   role?: string;
   summary: string;
