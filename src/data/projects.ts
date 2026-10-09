@@ -1,0 +1,93 @@
+import type { Project } from "@/types/resume";
+
+export const projects: Project[] = [
+  {
+    name: "NCT WISH · WISH TOWN 위젯",
+    period: "2026.09 ~ 2026.10",
+    role: "개발자 1 · 기획자 1 — 위젯·관리자·제작 도구·인프라·로그 관측 전담",
+    summary: "NCT WISH 프로모션 페이지에 삽입하는 팬 참여 게임 위젯과, 기획자가 직접 쓰는 제작·운영 도구",
+    bullets: [
+      "iframe 삽입형 JavaScript 위젯과 2D 스프라이트시트 캐릭터 모션 구현. 탐색·교류·미션·구매 기능과 모바일·다국어 화면",
+      "웹 편집 도구와 MCP로 기획자가 에셋 교체·씬 설정·개발환경 배포를 직접 요청하고 확인",
+      "사용자 위젯은 S3·CloudFront, 관리자 서버는 EC2로 분리. 로그를 Lambda에서 평탄화하고 정각마다 Athena로 집계해 행동 관측",
+      "개발·배포까지 약 **2주**, 프로모션 페이지 오픈 첫 1시간 **83,000 PV**",
+    ],
+    tech: ["JavaScript", "iframe", "MCP", "S3", "CloudFront", "Lambda", "EC2", "Athena"],
+    links: [{ label: "위시랜드", url: "https://www.wishwishwishwishwishland.com/" }],
+    featured: true,
+  },
+  {
+    name: "UMZIK · AI 스프라이트 애니메이션 생성 서비스",
+    period: "2026.08 ~ 2026.10",
+    role: "1인 개발 — 제품 설계 · 프론트엔드 · 백엔드 · 인프라 · 결제 · 운영 도구",
+    summary: "사진 한 장으로 스프라이트 애니메이션을 만드는 AI 생성 서비스",
+    bullets: [
+      "모델별 결과·비용을 비교해 provider를 선별하고, provider별 큐·웹훅으로 긴 생성 작업을 웹 요청에서 분리",
+      "토스페이먼츠 결제와 크레딧 차감, 상품·생성·결제 이력과 영수증을 확인하는 Admin, Slack 결제 알림",
+      "Locust로 가상 사용자 **1,000명** 동시 생성 시나리오를 3회 실행해 **이중 과금 경로**와 DB 병목(커넥션 풀 9 → 25) 수정",
+      "내부 생성 기록 934건 중 **911건 성공** (97.5%)",
+    ],
+    tech: ["Next.js", "NestJS", "PostgreSQL", "AWS", "Toss Payments", "Locust"],
+    links: [{ label: "umzik.com", url: "https://umzik.com" }],
+    featured: true,
+  },
+  {
+    name: "Moiime · 자연어 아바타 파츠 검색·조립",
+    period: "2026.06 ~ 현재",
+    role: "검색 · 백엔드 · SDK · 인프라",
+    summary: "자연어 조건으로 약 1,600개 파츠를 검색하고 아바타로 조립하는 서비스",
+    bullets: [
+      "자연어 요청 → 파츠별 프롬프트 추출 → vector·image·lexical 검색 → 카테고리별 선택 → 아바타 조립",
+      "앱·인증·아바타 생성 서버의 역할을 재설계해 프로토타입 인수 후 **3주 만에 출시**",
+      "데모 게임에 SDK를 직접 연동해 사용성을 검증하고, SDK와 삽입형 위젯을 분리",
+    ],
+    tech: ["TypeScript", "NestJS", "React", "PostgreSQL", "MongoDB", "Vector Search", "S3", "CDN"],
+    links: [{ label: "moii.me", url: "https://moii.me" }],
+    featured: true,
+  },
+  {
+    name: "Modular Grid Inventory",
+    period: "2026.09",
+    role: "개인 프로젝트 — 설계 · 구현 · 제작 도구 · 테스트",
+    summary: "중첩 가방·독립 포켓·수납 제한·스택을 지원하는 Unity 인벤토리 패키지",
+    bullets: [
+      "이동 실패 시 상태 유지, 자기 자신·자손 가방으로의 순환 중첩 방지",
+      "Custom Inspector에서 포켓 배치·수납 규칙을 편집하고 미리보기·Undo 지원",
+      "테스트 **125건**(Edit 101 · Play 24), Asset Store 심사 제출",
+    ],
+    tech: ["Unity", "C#", "uGUI", "ScriptableObject", "Unity Test Framework"],
+    links: [
+      { label: "데모", url: "https://youtu.be/cyUhx101tj8" },
+      { label: "GitHub", url: "https://github.com/pktony/modular-grid-inventory" },
+    ],
+    featured: false,
+  },
+  {
+    name: "Moii · Text to Animation 시맨틱 캐시",
+    period: "2026.02 ~ 2026.04",
+    role: "Moii 프로젝트 내 기능 개발",
+    summary: "query embedding과 semantic cache로 매 요청의 모델 실행을 줄인 텍스트 → 애니메이션 서비스",
+    bullets: [
+      "정규화한 입력으로 캐시를 조회하고 miss일 때만 추론. 생성 지연 **15초 → 3초**",
+      "프롬프트 표준화, cache builder와 threshold 조정 도구 구현",
+      "SMPL-H 52 joints를 Unity Humanoid 22 joints로 리타게팅, MediaPipe 영상에서 애니메이션 추출",
+    ],
+    tech: ["Python", "pgvector", "MediaPipe", "Unity Humanoid"],
+    links: [],
+    featured: false,
+  },
+  {
+    name: "AI 피드 운영 자동화",
+    period: "2025.12 ~ 2026.01",
+    role: "워크플로 설계·구현, 생성물 검수, 관리 화면",
+    summary: "콘텐츠 생성과 실행을 분리한 LangGraph 워크플로로 피드 봇 7개를 운영",
+    bullets: [
+      "서비스 톤에 맞춘 데이터와 fine-tuning으로 콘텐츠 생성, 커뮤니티 가이드라인 검색과 생성물 검수",
+      "7개 봇을 하루 9시간, 20~60분 간격으로 운영해 첫 3개월 월 **5,600~17,000건**의 액션 처리",
+      "성공·실패·거절 로그와 기획자용 관리 화면 구현",
+    ],
+    tech: ["NestJS", "LangGraph", "Fine-tuning"],
+    links: [],
+    featured: false,
+  },
+];

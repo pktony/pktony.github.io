@@ -2,26 +2,27 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Warm paper (light) / warm ink (dark) — 단일 강조색(burnt orange) */
 :root {
-  --bg: #ffffff;
-  --fg: #18181b;
-  --muted: #52525b;
-  --line: #e4e4e7;
-  --card: #f7f7f8;
-  --accent: #4f46e5;
-  --chip: #eef0ff;
-  --chip-fg: #3730a3;
+  --bg: #f7f5f0;
+  --fg: #1c1b19;
+  --muted: #5c5a55;
+  --line: #dcd8cf;
+  --card: #ffffff;
+  --accent: #c2410c;
+  --chip: #ece8de;
+  --chip-fg: #3f3d37;
   color-scheme: light;
 }
 .dark {
-  --bg: #1f2023;
-  --fg: #f2f2f2;
-  --muted: #a1a1aa;
-  --line: #3a3b40;
-  --card: #26272b;
-  --accent: #8b8cf8;
-  --chip: #2e2f45;
-  --chip-fg: #c7c8ff;
+  --bg: #141412;
+  --fg: #ece9e2;
+  --muted: #a8a59c;
+  --line: #2c2b27;
+  --card: #1c1b18;
+  --accent: #fb923c;
+  --chip: #2a2824;
+  --chip-fg: #d6d2c8;
   color-scheme: dark;
 }
 
@@ -36,17 +37,11 @@ body {
   overflow-wrap: anywhere;
 }
 strong { font-weight: 700; }
-
-/* gradient-border card (metrics / projects) */
-.gcard {
-  background:
-    linear-gradient(var(--card), var(--card)) padding-box,
-    linear-gradient(135deg, #6366f1, #a855f7 55%, #ec4899) border-box;
-  border: 1px solid transparent;
-}
+.font-mono { font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
 a, button { transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, opacity 150ms ease; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--accent); color: var(--bg); }
 
 /* theme toggle icons */
 .icon-sun { display: none; }

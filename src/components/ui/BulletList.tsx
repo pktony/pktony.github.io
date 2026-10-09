@@ -1,0 +1,15 @@
+import { Rich } from "./Rich";
+
+type BulletListProps = { items: string[]; className?: string };
+
+export function BulletList({ items, className = "" }: BulletListProps) {
+  return (
+    <ul className={`list-disc pl-5 marker:text-[var(--muted)] ${className}`}>
+      {items.map((item) => (
+        <li key={item}>
+          <Rich text={item} />
+        </li>
+      ))}
+    </ul>
+  );
+}

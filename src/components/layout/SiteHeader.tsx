@@ -1,0 +1,25 @@
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import type { NavItem, Social } from "@/types/resume";
+import { Logo } from "./Logo";
+import { MailLink } from "./MailLink";
+import { SectionNav } from "./SectionNav";
+import { SocialLinks } from "./SocialLinks";
+
+type SiteHeaderProps = { handle: string; nav: NavItem[]; socials: Social[]; email: string };
+
+// 헤더 조립만 담당. 각 요소의 모양과 동작은 하위 컴포넌트가 가진다
+export function SiteHeader({ handle, nav, socials, email }: SiteHeaderProps) {
+  return (
+    <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--bg)]/85 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-4xl items-center justify-between px-5">
+        <Logo text={handle} />
+        <SectionNav items={nav} />
+        <div className="flex items-center">
+          <SocialLinks socials={socials} />
+          <MailLink email={email} />
+          <ThemeToggle />
+        </div>
+      </div>
+    </header>
+  );
+}
