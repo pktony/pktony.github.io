@@ -15,6 +15,7 @@ export type Profile = {
   handle: string;
   title: string;
   email: string;
+  siteUrl: string;
   intro: string[];
 };
 
@@ -51,4 +52,3 @@ export type ProjectGroup = {
   projects: Project[];
 };
 
-export type ContactLink = { text: string; url: string };

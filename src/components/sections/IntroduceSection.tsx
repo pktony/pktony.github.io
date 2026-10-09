@@ -1,14 +1,13 @@
 import { Rich } from "@/components/ui/Rich";
 import { Section } from "@/components/ui/Section";
-import type { ContactLink, Photo } from "@/types/resume";
-import { ContactLinks } from "./ContactLinks";
+import type { Photo } from "@/types/resume";
 import { ProfilePhoto } from "./ProfilePhoto";
 
-type IntroduceSectionProps = { photo: Photo; name: string; title: string; contacts: ContactLink[]; paragraphs: string[] };
+type IntroduceSectionProps = { photo: Photo; name: string; title: string; paragraphs: string[] };
 
 // sm 이상: 사진을 왼쪽에 띄우고(float) 글이 옆을 감싸다가 사진보다 길어지면 아래로 이어진다
 // sm 미만: 옆 공간이 좁아 사진을 글 위에 둔다
-export function IntroduceSection({ photo, name, title, contacts, paragraphs }: IntroduceSectionProps) {
+export function IntroduceSection({ photo, name, title, paragraphs }: IntroduceSectionProps) {
   return (
     <Section id="introduce" title="Introduce">
       <div className="flow-root max-w-[56rem]">
@@ -16,7 +15,6 @@ export function IntroduceSection({ photo, name, title, contacts, paragraphs }: I
         <p className="text-xl font-bold">
           {name} <span className="font-medium text-[var(--muted)]">· {title}</span>
         </p>
-        <ContactLinks links={contacts} />
         <div className="mt-5 space-y-6">
           {paragraphs.map((p) => (
             <p key={p}>
