@@ -60,6 +60,18 @@ a, button { transition: color 150ms ease, background-color 150ms ease, border-co
 .dark .icon-sun { display: block; }
 .dark .icon-moon { display: none; }
 
+/* 인쇄·PDF: 밝은 색, 헤더 고정 해제, 링크 주소 병기 */
+@media print {
+  :root, .dark {
+    --bg: #ffffff; --fg: #14171f; --muted: #4b5565; --line: #d4d8e0;
+    --card: #f5f6f8; --accent: #2b3f9e; --chip: #eaeefc; --chip-fg: #2b3f9e;
+  }
+  header.sticky { position: static; backdrop-filter: none; }
+  a[href="#main"] { display: none; }
+  #projects a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; font-weight: 400; color: var(--muted); }
+  li, article { break-inside: avoid; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }

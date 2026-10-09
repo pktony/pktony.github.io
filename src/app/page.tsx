@@ -11,6 +11,7 @@ import { Container } from "@/components/ui/Container";
 import { SkipLink } from "@/components/ui/SkipLink";
 import { awards } from "@/data/awards";
 import { certificates } from "@/data/certificates";
+import { contactLinks } from "@/data/contactLinks";
 import { education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { navigation } from "@/data/navigation";
@@ -32,7 +33,7 @@ export default function Home() {
         <main id="main" tabIndex={-1}>
         <PageTitle>{`${profile.name} 포트폴리오`}</PageTitle>
         <div id="top" />
-        <IntroduceSection photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
+        <IntroduceSection photo={profile.photo} contacts={contactLinks} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />
         <ProjectsSection groups={projectGroups} featured={featuredProjects(projects)} extras={extraProjects(projects)} />
         <SkillsSection groups={skills} />

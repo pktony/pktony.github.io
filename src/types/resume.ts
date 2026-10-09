@@ -50,3 +50,5 @@ export type ProjectGroup = {
   links: ProjectLink[];
   projects: Project[];
 };
+
+export type ContactLink = { text: string; url: string };
