@@ -17,6 +17,28 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    name: "Moii · 3D 소셜 서비스",
+    period: "2023.02 ~ 현재",
+    role: "Unity 클라이언트, 백엔드 도메인 일부, 로그·알림 설계, 최종 MR 검토",
+    summary: "글로벌 3D 소셜 서비스를 파티 게임으로 확장하며 클라이언트 성능·실시간 동기화·서비스 운영을 개선",
+    bullets: [
+      "**에셋 직렬화:** JSON → Protobuf 전환으로 에셋 용량 **70%** 절감, 역직렬화 GC 스파이크 제거",
+      "**실시간 동기화:** Snapshot Interpolation과 제한된 Extrapolation으로 200kb/s 수준에서도 움직임 보간",
+      "**셰이더 메모리:** Asset Bundle 간 중복 셰이더를 정리해 Shader 메모리 **0.83GB → 약 1MB**, 에셋번들 로드 시 셰이더로 인한 크래시 **제로**",
+      "**UI 렌더링:** 비동기 재활용 스크롤과 SubCanvas 분리로 렌더링 피크 **50%** 감소, 이미지 텍스처 메모리 약 **90%** 절감",
+      "**마이크로서비스:** 개발자 4명이 단일 서버를 **19개 서비스**로 분리. 일부 도메인 개발, 로그·알림 설계, 최종 MR 검토",
+      "**배포 자동화:** Unity 피드를 Next.js 웹뷰로 옮겨 콘텐츠 반영 **3일 → 5분**, 4개 프로젝트 iOS·Android 빌드를 8개 Jenkins 파이프라인으로 구성해 약 25분짜리 로컬 빌드 제거",
+      "**관측·운영:** Prometheus·Fluent Bit 지표·로그 수집과 임계치 알림, Claude 루틴으로 일일 운영 보고 자동화",
+      "**네이티브·도구:** Share Sheet·키보드·오디오 세션을 Objective-C·Java로 구현, CMS로 비개발자가 콘텐츠를 직접 반영",
+    ],
+    tech: ["Unity", "C#", "Next.js", "Protobuf", "Jenkins", "Prometheus", "Grafana", "Fluent Bit"],
+    links: [
+      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.illuni.moii" },
+      { label: "App Store", url: "https://apps.apple.com/kr/app/id6456406927" },
+    ],
+    featured: true,
+  },
+  {
     name: "UMZIK · AI 스프라이트 애니메이션 생성 서비스",
     period: "2026.08 ~ 2026.10",
     role: "제품 설계, 프론트엔드, 백엔드, 인프라, 결제, 운영 도구 개발",
