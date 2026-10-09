@@ -4,7 +4,7 @@ import type { Profile } from "@/types/resume";
 export const profile: Profile = {
   photo: { src: "/profile.webp", alt: "벽화 앞을 걷고 있는 박상원", width: 480, height: 600 },
   name: "박상원",
-  handle: "Pktony.",
+  handle: "pktony.github.io",
   title: "Product Engineer · Unity & Web",
   email: "pktony2011@gmail.com",
   siteUrl: "https://pktony.github.io",

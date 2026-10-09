@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <ThemeInitScript />
       <SkipLink href="#main">본문으로 건너뛰기</SkipLink>
-      <SiteHeader handle={profile.handle} siteUrl={profile.siteUrl} nav={navigation} socials={socials} email={profile.email} />
+      <SiteHeader handle={profile.handle} pdfFileTitle={`${profile.name} 포트폴리오`} nav={navigation} socials={socials} email={profile.email} />
       <Container className="pb-24">
         <main id="main" tabIndex={-1}>
         <PageTitle>{`${profile.name} 포트폴리오`}</PageTitle>

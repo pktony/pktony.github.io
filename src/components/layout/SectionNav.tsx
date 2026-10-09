@@ -2,7 +2,7 @@ import type { NavItem } from "@/types/resume";
 
 export function SectionNav({ items }: { items: NavItem[] }) {
   return (
-    <nav aria-label="섹션 이동" className="hidden gap-1 sm:flex">
+    <nav aria-label="섹션 이동" className="hidden gap-1 sm:flex print:hidden">
       {items.map((item) => (
         <a
           key={item.href}
