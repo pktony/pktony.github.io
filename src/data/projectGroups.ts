@@ -1,4 +1,5 @@
 import type { Project, ProjectGroup } from "@/types/resume";
+import { multiplayerWorldDetail } from "./details/multiplayerWorld";
 import { clientPerformanceDetail } from "./details/clientPerformance";
 import { textToAnimationDetail } from "./details/textToAnimation";
 import { aiFeedDetail } from "./details/aiFeed";
@@ -29,6 +30,7 @@ export const projectGroups: ProjectGroup[] = [
     projects: [
       sub({
         name: "3D 실시간 멀티플레이 월드 개발",
+        details: multiplayerWorldDetail,
         period: "2024.12 ~ 2025.05",
         summary: "글로벌 유저 대상 실시간 위치 동기화 3D 멀티플레이 월드 개발",
         bullets: [
