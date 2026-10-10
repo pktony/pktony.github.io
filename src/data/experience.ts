@@ -6,13 +6,6 @@ export const experience: Experience[] = [
     role: "개발2팀 팀장",
     period: "2023.02 ~ 현재",
     badges: ["Unity Client", "Backend", "DevOps", "Team Lead"],
-    serviceStats: {
-      title: "Moii 서비스 지표",
-      items: [
-        { value: "약 59만", label: "누적 다운로드" },
-        { value: "99.7%", label: "앱 안정성" },
-      ],
-    },
     bullets: [
       "Moii(3D 소셜 앱)의 클라이언트·서버·운영을 맡고, Moiime·UMZIK·WISH TOWN을 설계부터 배포까지 개발. **4명 리딩**",
       "**성능:** JSON → Protobuf 전환으로 GC 스파이크를 없애고, Asset Bundle 중복 셰이더를 정리해 에셋번들 로드 시 셰이더로 인한 **크래시를 제로**로 만듦",
@@ -20,12 +13,6 @@ export const experience: Experience[] = [
       "**UI:** 비동기 재활용 스크롤과 SubCanvas 분리로 렌더링 피크 **50%** 감소, 이미지 텍스처 메모리 약 **90%** 절감",
       "**배포·운영:** 피드를 웹뷰로 전환해 스토어 심사 없이 반영하고, Jenkins 파이프라인으로 로컬 빌드를 없앰. 마이크로서비스 분리에 참여(일부 도메인 개발, 로그·알림 설계, 최종 MR 검토)",
       "**팀:** 코드리뷰·Git Flow·WBS 정착, 기획·아트가 개발자 없이 쓰는 CMS와 파츠 뷰어 제작",
-    ],
-    metrics: [
-      { value: "0.83GB → ~1MB", label: "Shader 메모리" },
-      { value: "3일 → 5분", label: "콘텐츠 반영 시간" },
-      { value: "70%", label: "에셋 용량 절감" },
-      { value: "19", label: "마이크로서비스로 분리 (팀 4명)" },
     ],
   },
   {
@@ -37,6 +24,5 @@ export const experience: Experience[] = [
       "중국 항공기 형식인증 프로젝트에서 현지 직원, 인증 대행사와 **영어로 협업**",
       "검증 근거와 변경 이력을 남기는 문서화 경험을 개발 프로세스에 적용",
     ],
-    metrics: [],
   },
 ];

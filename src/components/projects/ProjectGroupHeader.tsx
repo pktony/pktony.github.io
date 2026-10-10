@@ -1,4 +1,5 @@
 import type { ProjectGroup } from "@/types/resume";
+import { ServiceStats } from "./ServiceStats";
 import { ProjectIcon } from "./ProjectIcon";
 import { ProjectLinks } from "./ProjectLinks";
 
@@ -15,6 +16,7 @@ export function ProjectGroupHeader({ group }: { group: ProjectGroup }) {
         <p className="mt-3 text-body font-medium">{group.summary}</p>
         {group.role && <p className="mt-2 text-meta text-muted">{group.role}</p>}
         <ProjectLinks links={group.links} />
+        <ServiceStats stats={group.serviceStats} />
       </div>
     </div>
   );

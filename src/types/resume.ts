@@ -2,7 +2,6 @@ export type SocialIconName = "github" | "tistory";
 
 export type Social = { label: string; url: string; icon: SocialIconName };
 export type NavItem = { href: string; label: string };
-export type Metric = { value: string; label: string };
 export type Credential = { title: string; period: string };
 export type SkillGroup = { label: string; items: string[] };
 export type ProjectLink = { label: string; url: string };
@@ -27,9 +26,7 @@ export type Experience = {
   role: string;
   period: string;
   badges: string[];
-  serviceStats?: ServiceStats;
   bullets: string[];
-  metrics: Metric[];
 };
 
 export type Project = {
@@ -51,6 +48,7 @@ export type ProjectGroup = {
   period: string;
   role?: string;
   summary: string;
+  serviceStats?: ServiceStats;
   links: ProjectLink[];
   projects: Project[];
 };

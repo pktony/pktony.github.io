@@ -1,7 +1,7 @@
 import type { ServiceStats as ServiceStatsData } from "@/types/resume";
 import { ServiceStatItem } from "./ServiceStatItem";
 
-// 서비스 전체 지표 띠. 개인 성과 카드(MetricGrid)보다 한 단계 낮은 위계로 가는 선과 구분선만 사용한다
+// 서비스 전체 지표 띠. 박스 없이 가는 선과 구분선만 사용한다
 export function ServiceStats({ stats }: { stats?: ServiceStatsData }) {
   if (!stats || stats.items.length === 0) return null;
   return (
