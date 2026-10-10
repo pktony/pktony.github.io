@@ -35,7 +35,7 @@ export type Experience = {
 export type Project = {
   name: string;
   icon?: string; // 공식 아이콘(스토어·사이트 파비콘) 이미지 경로
-
+  label?: string; // 제목 옆 성격 표시(예: 개인 프로젝트)
   period?: string;
   role?: string;
   summary: string;
@@ -48,7 +48,6 @@ export type Project = {
 export type ProjectGroup = {
   title: string;
   icon?: string; // 공식 아이콘(스토어·사이트 파비콘) 이미지 경로
-
   period: string;
   role?: string;
   summary: string;
