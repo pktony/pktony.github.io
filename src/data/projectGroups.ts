@@ -1,4 +1,5 @@
 import type { Project, ProjectGroup } from "@/types/resume";
+import { avatarCustomizationDetail } from "./details/avatarCustomization";
 import { multiplayerWorldDetail } from "./details/multiplayerWorld";
 import { clientPerformanceDetail } from "./details/clientPerformance";
 import { textToAnimationDetail } from "./details/textToAnimation";
@@ -56,6 +57,7 @@ export const projectGroups: ProjectGroup[] = [
       }),
       sub({
         name: "아바타 커스터마이징 시스템",
+        details: avatarCustomizationDetail,
         period: "2024.03 ~ 2024.05",
         summary: "파츠 기반 아바타 커스터마이징 시스템 설계와 운영 도구",
         bullets: [
