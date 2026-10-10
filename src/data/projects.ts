@@ -1,8 +1,13 @@
 import type { Project } from "@/types/resume";
+import { wishTownDetail } from "./details/wishTown";
+import { umzikDetail } from "./details/umzik";
+import { matzipmapDetail } from "./details/matzipmap";
+import { modularGridInventoryDetail } from "./details/modularGridInventory";
 
 export const projects: Project[] = [
   {
     name: "맛집여지도 · 방송 맛집 지도",
+    details: matzipmapDetail,
     icon: "/project-icons/matzipmap.webp",
     period: "2026.07 ~ 현재",
     summary: "방송·유튜브 맛집 3,451곳을 모은 지도 서비스. 광고비 0원으로 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",
@@ -29,6 +34,7 @@ export const projects: Project[] = [
   },
   {
     name: "NCT WISH · WISH TOWN 위젯",
+    details: wishTownDetail,
     icon: "/project-icons/wish-town.webp",
     period: "2026.09 ~ 2026.10",
     role: "위젯, 관리자, 제작 도구, 인프라, 로그 관측 개발",
@@ -45,6 +51,7 @@ export const projects: Project[] = [
   },
   {
     name: "UMZIK · AI 스프라이트 애니메이션 생성 서비스",
+    details: umzikDetail,
     icon: "/project-icons/umzik.webp",
     period: "2026.08 ~ 2026.10",
     role: "제품 설계, 프론트엔드, 백엔드, 인프라, 결제, 운영 도구 개발",
@@ -76,6 +83,7 @@ export const projects: Project[] = [
   },
   {
     name: "Modular Grid Inventory",
+    details: modularGridInventoryDetail,
     icon: "/project-icons/modular-grid-inventory.webp",
     period: "2026.09",
     role: "설계, 구현, 제작 도구, 테스트",

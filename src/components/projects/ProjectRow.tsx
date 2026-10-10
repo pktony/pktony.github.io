@@ -1,6 +1,7 @@
 import { BulletList } from "@/components/ui/BulletList";
 import { ChipList } from "@/components/ui/ChipList";
 import type { Project } from "@/types/resume";
+import { ProjectDetails } from "./ProjectDetails";
 import { ProjectHeader } from "./ProjectHeader";
 import { ProjectLinks } from "./ProjectLinks";
 
@@ -17,6 +18,7 @@ export function ProjectRow({ project: p, level }: ProjectRowProps) {
         <BulletList items={p.bullets} className="mt-block max-w-measure" />
         <ChipList items={p.tech} label="사용 기술" size="sm" className="mt-block" />
         <ProjectLinks links={p.links} />
+        <ProjectDetails name={p.name} subtitle="상세" icon={p.icon} detail={p.details} />
       </div>
     </li>
   );

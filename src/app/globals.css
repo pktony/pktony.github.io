@@ -22,6 +22,7 @@
   --color-chip: #eaeefc; /* 칩 배경 */
   --color-chip-ink: #2b3f9e; /* 칩 글자 */
   --color-mark: rgb(59 91 219 / 0.2); /* 성과 수치 형광펜 */
+  --color-scrim: rgb(20 23 31 / 0.55); /* 모달 뒤 어두운 막 */
 
   /* type: 역할 이름으로 쓴다. 크기와 행간이 한 쌍 */
   --text-*: initial; /* Tailwind 기본 크기(text-sm 등)는 끄고 아래 7단만 허용 */
@@ -52,6 +53,13 @@
   --spacing-section: 4rem; /* 섹션 사이 64px */
   --spacing-section-body: 2rem; /* 섹션 제목과 본문 사이 32px */
 
+  /* motion */
+  --animate-dialog-in: dialog-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  @keyframes dialog-in {
+    from { opacity: 0; transform: translateY(12px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+  }
+
   /* 글줄 길이 */
   --container-measure: 72ch;
 }
@@ -66,6 +74,7 @@
   --color-chip: #303646;
   --color-chip-ink: #d3dbff;
   --color-mark: rgb(157 176 255 / 0.28);
+  --color-scrim: rgb(0 0 0 / 0.65);
 }
 
 :root { color-scheme: light; }

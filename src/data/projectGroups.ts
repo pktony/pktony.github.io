@@ -1,4 +1,7 @@
 import type { Project, ProjectGroup } from "@/types/resume";
+import { clientPerformanceDetail } from "./details/clientPerformance";
+import { textToAnimationDetail } from "./details/textToAnimation";
+import { aiFeedDetail } from "./details/aiFeed";
 
 type SubProject = Omit<Project, "kind" | "links"> & { links?: Project["links"] };
 
@@ -39,6 +42,7 @@ export const projectGroups: ProjectGroup[] = [
       }),
       sub({
         name: "클라이언트 성능 최적화",
+        details: clientPerformanceDetail,
         period: "2025.09 ~ 2026.02",
         summary: "메모리·GC·렌더링 병목을 프로파일링으로 찾아 구조 단위로 해결",
         bullets: [
@@ -88,6 +92,7 @@ export const projectGroups: ProjectGroup[] = [
       }),
       sub({
         name: "Text to Animation 시맨틱 캐시",
+        details: textToAnimationDetail,
         period: "2026.02 ~ 2026.04",
         summary: "query embedding과 semantic cache로 매 요청의 모델 실행을 줄인 텍스트 → 애니메이션 서비스",
         bullets: [
@@ -99,6 +104,7 @@ export const projectGroups: ProjectGroup[] = [
       }),
       sub({
         name: "AI 피드 운영 자동화",
+        details: aiFeedDetail,
         period: "2025.12 ~ 2026.01",
         summary: "콘텐츠 생성과 실행을 분리한 LangGraph 워크플로로 피드 봇 7개를 운영",
         bullets: [
