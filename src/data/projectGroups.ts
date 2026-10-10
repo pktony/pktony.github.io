@@ -79,10 +79,10 @@ export const projectGroups: ProjectGroup[] = [
         summary: "단일 서버를 19개 서비스로 분리하고 관측·알림 체계 구성",
         bullets: [
           "개발자 4명이 단일 서버를 **19개 서비스**로 분리. 일부 도메인 개발과 최종 MR 검토",
-          "Prometheus·Fluent Bit 기반 지표·로그 수집과 메모리·CPU 임계치 알림 설계",
+          "Prometheus·Fluent Bit 기반 지표·로그 수집, Elasticsearch·Kibana 로그 조회, 메모리·CPU 임계치 알림 설계",
           "Claude 루틴으로 4xx·5xx 오류와 API 응답 시간 통계를 매일 확인하고 보고서와 Slack 알림 자동화",
         ],
-        tech: ["Prometheus", "Grafana", "Fluent Bit", "Claude"],
+        tech: ["Prometheus", "Grafana", "Fluent Bit", "Elasticsearch", "Kibana", "Claude"],
       }),
       sub({
         name: "피드 웹뷰 전환",
