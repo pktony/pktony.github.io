@@ -1,4 +1,5 @@
 import type { Project } from "@/types/resume";
+import { moiimeDetail } from "./details/moiime";
 import { wishTownDetail } from "./details/wishTown";
 import { umzikDetail } from "./details/umzik";
 import { matzipmapDetail } from "./details/matzipmap";
@@ -68,12 +69,14 @@ export const projects: Project[] = [
   },
   {
     name: "Moiime · 3D 아바타 에셋 SaaS",
+    details: moiimeDetail,
     icon: "/project-icons/moiime.webp",
     period: "2026.06 ~ 현재",
-    role: "검색, 백엔드, SDK, 인프라 개발",
+    role: "검색, 백엔드, SDK, 에셋 파이프라인, 인프라 개발",
     summary: "3D 아바타 에셋을 서비스에 가져다 쓸 수 있게 제공하는 SaaS",
     bullets: [
-      "**자연어 파츠 검색·조립:** 자연어 요청에서 파츠별 프롬프트를 추출하고 vector·image·lexical 검색으로 약 1,600개 파츠에서 골라 아바타로 조립",
+      "**자연어 파츠 검색·조립:** 자연어 요청에서 파츠별 프롬프트를 추출하고 vector·image·lexical 검색으로 파츠를 골라 아바타로 조립",
+      "**에셋 버전 관리:** 버전을 해시로 식별하고 버전 포인터만 바꿔 **롤백**을 쉽게 하며, 변경된 것만 올리는 **증분 빌드**로 배포",
       "**SDK:** SDK 제작과 문서 작성, API key 인증 구현. 데모 게임에 SDK를 연동해 사용성 검증",
       "프로토타입 인수 후 앱·인증·아바타 생성 서버를 재설계해 **3주 만에 출시**",
     ],
