@@ -78,7 +78,7 @@ export const projects: Project[] = [
       "**자연어 파츠 검색·조립:** 자연어 요청에서 파츠별 프롬프트를 추출하고 텍스트·이미지 임베딩과 렉시컬을 결합한 하이브리드 검색으로 파츠를 골라 아바타로 조립",
       "**에셋 버전 관리:** 버전을 해시로 식별하고 버전 포인터만 바꿔 **롤백**을 쉽게 하며, 변경된 것만 올리는 **증분 빌드**로 배포",
       "**SDK:** SDK 제작과 문서 작성, API key 인증 구현. 데모 게임에 SDK를 연동해 사용성 검증",
-      "프로토타입 인수 후 앱·인증·아바타 생성 서버를 재설계해 **3주 만에 출시**",
+      "프로토타입 인수 후 앱·인증·아바타 생성 서버를 재설계해 ==3주== 만에 출시",
     ],
     tech: ["TypeScript", "NestJS", "React", "Tailwind CSS v4", "three.js", "PostgreSQL", "MongoDB", "Vector Search", "S3", "CDN"],
     links: [{ label: "moii.me", url: "https://moii.me" }],
