@@ -16,8 +16,8 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "통합 관측 플랫폼",
-    summary: "여러 서비스가 공유하는 지표·로그 관측 시스템을 한 벌로 구축하고 프로젝트별로 나눠 운영",
+    name: "사내 통합 모니터링 시스템",
+    summary: "여러 서비스가 공유하는 지표·로그 관측 시스템을 구축하고 프로젝트별로 나눠 운영",
     bullets: [
       "지표(Prometheus·Grafana)와 로그(Fluent Bit·Elasticsearch·Kibana)를 하나의 시스템으로 구성",
       "메모리·CPU 임계치 알림 설계",
