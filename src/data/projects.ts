@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "iframe 삽입형 JavaScript 위젯과 2D 스프라이트시트 캐릭터 모션 구현. 탐색·교류·미션·구매 기능과 모바일·다국어 화면",
       "웹 편집 도구와 MCP로 기획자가 에셋 교체·씬 설정·개발환경 배포를 직접 요청하고 확인",
       "사용자 위젯은 S3·CloudFront, 관리자 서버는 EC2로 분리. 로그를 Lambda에서 평탄화하고 정각마다 Athena로 집계해 행동 관측",
-      "개발·배포까지 약 ==2주==, 프로모션 페이지 오픈 첫 1시간 ==83,000 PV==",
+      "개발·배포까지 약 ==2주==, 프로모션 페이지 오픈 첫 1시간 접속자 ==83,000명==",
     ],
     tech: ["JavaScript", "iframe", "MCP", "S3", "CloudFront", "Lambda", "EC2", "Athena", "Tailwind CSS v4"],
     links: [{ label: "위시랜드", url: "https://www.wishwishwishwishwishland.com/" }],

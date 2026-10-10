@@ -25,11 +25,12 @@ export const projectGroups: ProjectGroup[] = [
     ],
     projects: [
       sub({
-        name: "3D 오픈월드 실시간 동기화",
+        name: "3D 실시간 멀티플레이 월드 개발",
         period: "2024.12 ~ 2025.05",
-        summary: "글로벌 유저 대상 실시간 위치 동기화 3D 오픈월드 개발",
+        summary: "글로벌 유저 대상 실시간 위치 동기화 3D 멀티플레이 월드 개발",
         bullets: [
           "고지연·저대역폭(200kb/s 수준)에서도 끊김 없는 이동을 위해 Snapshot Interpolation과 제한된 Extrapolation 구현",
+          "NavMesh 기반으로 walkable, obstacle 메시 추출",
           "서버 틱 기반 FSM으로 상태 동기화 구조를 설계하고, WebSocket 재연결과 재연결 후 상태·위치 동기화 구현",
           "Light Probe 라이팅 베이크로 모바일 조명 연산을 줄이고, Target Matching으로 키가 다른 아바타의 의자 앉기 구현",
           "캐릭터 16명 접속 시에도 성능 저하와 OOM 없음",
@@ -60,9 +61,9 @@ export const projectGroups: ProjectGroup[] = [
       }),
       sub({
         name: "마이크로서비스 전환",
-        summary: "단일 서버를 19개 서비스로 분리",
-        bullets: ["개발자 4명이 단일 서버를 ==19개== 서비스로 분리. 일부 도메인 개발과 최종 MR 검토"],
-        tech: ["NestJS", "Microservices"],
+        summary: "Node.js·JavaScript 단일 서버를 NestJS·TypeScript 기반 19개 서비스로 전환",
+        bullets: ["개발자 4명이 단일 서버를 NestJS·TypeScript 기반 ==19개== 서비스로 분리·전환. 일부 도메인 개발과 최종 MR 검토"],
+        tech: ["NestJS", "TypeScript", "Node.js"],
       }),
       sub({
         name: "배포·운영 병목 제거",
