@@ -1,10 +1,11 @@
 import type { Project } from "@/types/resume";
+import { PERSONAL_PROJECT } from "./labels";
 
 export const projects: Project[] = [
   {
     name: "맛집여지도 · 방송 맛집 지도",
     icon: "/project-icons/matzipmap.webp",
-    label: "개인 프로젝트",
+    label: PERSONAL_PROJECT,
     period: "2026.07 ~ 현재",
     summary: "방송·유튜브 맛집 3,451곳을 모은 지도 서비스. 광고비 0원으로 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",
     bullets: [
@@ -78,7 +79,7 @@ export const projects: Project[] = [
   {
     name: "Modular Grid Inventory",
     icon: "/project-icons/modular-grid-inventory.webp",
-    label: "개인 프로젝트",
+    label: PERSONAL_PROJECT,
     period: "2026.09",
     role: "설계, 구현, 제작 도구, 테스트",
     summary: "Escape from Tarkov 스타일 격자 인벤토리 시스템. 중첩 가방·독립 포켓·수납 제한·스택을 지원하는 Unity 패키지",
