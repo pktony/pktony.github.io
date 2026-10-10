@@ -19,7 +19,7 @@ import { projectGroups } from "@/data/projectGroups";
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { socials } from "@/data/socials";
-import { extraProjects, featuredProjects } from "@/lib/projectSelectors";
+import { personalProjects, workProjects } from "@/lib/projectSelectors";
 
 // 데이터를 각 섹션에 연결하는 조립만 한다
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
         <div id="top" />
         <IntroduceSection pdfFileTitle={`${profile.name} 포트폴리오`} photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
         <ExperienceSection items={experience} />
-        <ProjectsSection groups={projectGroups} featured={featuredProjects(projects)} extras={extraProjects(projects)} />
+        <ProjectsSection groups={projectGroups} work={workProjects(projects)} personal={personalProjects(projects)} />
         <SkillsSection groups={skills} />
         <MoreSection education={education} awards={awards} certificates={certificates} />
         </main>

@@ -1,9 +1,9 @@
 import type { Project, ProjectGroup } from "@/types/resume";
 
-type SubProject = Omit<Project, "featured" | "links"> & { links?: Project["links"] };
+type SubProject = Omit<Project, "kind" | "links"> & { links?: Project["links"] };
 
-// 그룹 안의 하위 프로젝트: featured·links 기본값을 채운다
-const sub = (p: SubProject): Project => ({ links: [], featured: false, ...p });
+// 그룹 안의 하위 프로젝트: kind·links 기본값을 채운다
+const sub = (p: SubProject): Project => ({ links: [], kind: "work", ...p });
 
 export const projectGroups: ProjectGroup[] = [
   {

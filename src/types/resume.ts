@@ -32,14 +32,13 @@ export type Experience = {
 export type Project = {
   name: string;
   icon?: string; // 공식 아이콘(스토어·사이트 파비콘) 이미지 경로
-  label?: string; // 제목 옆 성격 표시(예: 개인 프로젝트)
   period?: string;
   role?: string;
   summary: string;
   bullets: string[];
   tech: string[];
   links: ProjectLink[];
-  featured: boolean;
+  kind: "work" | "personal"; // work: 회사 프로젝트, personal: 개인 프로젝트 섹션에 모아 보여준다
 };
 
 export type ProjectGroup = {

@@ -12,7 +12,7 @@ export function ProjectRow({ project: p, level }: ProjectRowProps) {
     <li className="grid gap-3 py-row md:grid-cols-[11rem_1fr] md:gap-8">
       <p className="font-mono text-meta tabular-nums text-muted md:pt-1.5">{p.period}</p>
       <div>
-        <ProjectHeader name={p.name} role={p.role} level={level} icon={p.icon} label={p.label} />
+        <ProjectHeader name={p.name} role={p.role} level={level} icon={p.icon} />
         <p className="mt-block text-body font-medium">{p.summary}</p>
         <BulletList items={p.bullets} className="mt-block max-w-measure" />
         <ChipList items={p.tech} label="사용 기술" size="sm" className="mt-block" />

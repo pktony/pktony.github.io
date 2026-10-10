@@ -1,11 +1,9 @@
 import type { Project } from "@/types/resume";
-import { PERSONAL_PROJECT } from "./labels";
 
 export const projects: Project[] = [
   {
     name: "맛집여지도 · 방송 맛집 지도",
     icon: "/project-icons/matzipmap.webp",
-    label: PERSONAL_PROJECT,
     period: "2026.07 ~ 현재",
     summary: "방송·유튜브 맛집 3,451곳을 모은 지도 서비스. 광고비 0원으로 활성 사용자 4.4만 명 (GA4, 2026.07.24 ~ 08.22)",
     bullets: [
@@ -15,7 +13,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "Prisma", "PostgreSQL", "Supabase", "Vercel", "GitHub Actions", "LLM"],
     links: [{ label: "matzipmap.com", url: "https://www.matzipmap.com" }],
-    featured: true,
+    kind: "personal",
   },
   {
     name: "사내 통합 모니터링 시스템",
@@ -27,7 +25,7 @@ export const projects: Project[] = [
     ],
     tech: ["Prometheus", "Grafana", "Fluent Bit", "Elasticsearch", "Kibana", "Claude"],
     links: [],
-    featured: true,
+    kind: "work",
   },
   {
     name: "NCT WISH · WISH TOWN 위젯",
@@ -43,7 +41,7 @@ export const projects: Project[] = [
     ],
     tech: ["JavaScript", "iframe", "MCP", "S3", "CloudFront", "Lambda", "EC2", "Athena", "Tailwind CSS v4"],
     links: [{ label: "위시랜드", url: "https://www.wishwishwishwishwishland.com/" }],
-    featured: true,
+    kind: "work",
   },
   {
     name: "UMZIK · AI 스프라이트 애니메이션 생성 서비스",
@@ -59,7 +57,7 @@ export const projects: Project[] = [
     ],
     tech: ["Next.js", "NestJS", "PostgreSQL", "AWS", "Toss Payments", "Locust", "Tailwind CSS v4"],
     links: [{ label: "umzik.com", url: "https://umzik.com" }],
-    featured: true,
+    kind: "work",
   },
   {
     name: "Moiime · 3D 아바타 에셋 SaaS",
@@ -74,12 +72,11 @@ export const projects: Project[] = [
     ],
     tech: ["TypeScript", "NestJS", "React", "Tailwind CSS v4", "three.js", "PostgreSQL", "MongoDB", "Vector Search", "S3", "CDN"],
     links: [{ label: "moii.me", url: "https://moii.me" }],
-    featured: true,
+    kind: "work",
   },
   {
     name: "Modular Grid Inventory",
     icon: "/project-icons/modular-grid-inventory.webp",
-    label: PERSONAL_PROJECT,
     period: "2026.09",
     role: "설계, 구현, 제작 도구, 테스트",
     summary: "Escape from Tarkov 스타일 격자 인벤토리 시스템. 중첩 가방·독립 포켓·수납 제한·스택을 지원하는 Unity 패키지",
@@ -93,6 +90,6 @@ export const projects: Project[] = [
       { label: "데모", url: "https://youtu.be/cyUhx101tj8" },
       { label: "GitHub", url: "https://github.com/pktony/modular-grid-inventory" },
     ],
-    featured: false,
+    kind: "personal",
   },
 ];

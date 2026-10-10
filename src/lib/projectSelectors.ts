@@ -1,4 +1,4 @@
 import type { Project } from "@/types/resume";
 
-export const featuredProjects = (all: Project[]): Project[] => all.filter((p) => p.featured);
-export const extraProjects = (all: Project[]): Project[] => all.filter((p) => !p.featured);
+export const workProjects = (all: Project[]): Project[] => all.filter((p) => p.kind === "work");
+export const personalProjects = (all: Project[]): Project[] => all.filter((p) => p.kind === "personal");
