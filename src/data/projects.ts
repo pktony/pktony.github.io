@@ -59,7 +59,7 @@ export const projects: Project[] = [
     bullets: [
       "모델별 결과·비용을 비교해 provider를 선별하고, provider별 큐·웹훅으로 긴 생성 작업을 웹 요청에서 분리",
       "토스페이먼츠 결제와 크레딧 차감, 상품·생성·결제 이력과 영수증을 확인하는 Admin, Slack 결제 알림",
-      "Locust로 가상 사용자 ==1,000명== 동시 생성 시나리오를 3회 실행해 **이중 과금 경로**와 DB 병목(커넥션 풀 9 → 25) 수정",
+      "Locust로 가상 사용자 ==1,000명== 동시 생성 시나리오 3개를 실행해 DB 병목(커넥션 풀 9 → 25) 수정",
       "내부 생성 기록 934건 중 ==911건== 성공 (97.5%)",
     ],
     tech: ["Next.js", "NestJS", "PostgreSQL", "AWS", "Toss Payments", "Locust", "Tailwind CSS v4"],
