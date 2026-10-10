@@ -10,7 +10,7 @@
 @theme static {
   /* font */
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-mono: "JetBrains Mono Variable", "Pretendard Variable", Pretendard, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* color (light). 다크·인쇄 값은 아래에서 같은 변수를 덮어쓴다 */
   --color-canvas: #ffffff; /* 페이지 배경 */
@@ -21,6 +21,7 @@
   --color-accent: #3b5bdb; /* 링크·강조 */
   --color-chip: #eaeefc; /* 칩 배경 */
   --color-chip-ink: #2b3f9e; /* 칩 글자 */
+  --color-mark: rgb(59 91 219 / 0.2); /* 성과 수치 형광펜 */
 
   /* type: 역할 이름으로 쓴다. 크기와 행간이 한 쌍 */
   --text-*: initial; /* Tailwind 기본 크기(text-sm 등)는 끄고 아래 7단만 허용 */
@@ -64,6 +65,7 @@
   --color-accent: #9db0ff;
   --color-chip: #303646;
   --color-chip-ink: #d3dbff;
+  --color-mark: rgb(157 176 255 / 0.28);
 }
 
 :root { color-scheme: light; }
@@ -101,7 +103,7 @@
 @media print {
   :root, .dark {
     --color-canvas: #ffffff; --color-ink: #14171f; --color-muted: #4b5565; --color-line: #d4d8e0;
-    --color-card: #f5f6f8; --color-accent: #2b3f9e; --color-chip: #eaeefc; --color-chip-ink: #2b3f9e;
+    --color-card: #f5f6f8; --color-accent: #2b3f9e; --color-chip: #eaeefc; --color-chip-ink: #2b3f9e; --color-mark: rgb(59 91 219 / 0.2);
   }
   @page { size: A4; margin: 14mm; }
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }

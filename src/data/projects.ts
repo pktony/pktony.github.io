@@ -38,7 +38,7 @@ export const projects: Project[] = [
       "iframe 삽입형 JavaScript 위젯과 2D 스프라이트시트 캐릭터 모션 구현. 탐색·교류·미션·구매 기능과 모바일·다국어 화면",
       "웹 편집 도구와 MCP로 기획자가 에셋 교체·씬 설정·개발환경 배포를 직접 요청하고 확인",
       "사용자 위젯은 S3·CloudFront, 관리자 서버는 EC2로 분리. 로그를 Lambda에서 평탄화하고 정각마다 Athena로 집계해 행동 관측",
-      "개발·배포까지 약 **2주**, 프로모션 페이지 오픈 첫 1시간 **83,000 PV**",
+      "개발·배포까지 약 ==2주==, 프로모션 페이지 오픈 첫 1시간 ==83,000 PV==",
     ],
     tech: ["JavaScript", "iframe", "MCP", "S3", "CloudFront", "Lambda", "EC2", "Athena", "Tailwind CSS v4"],
     links: [{ label: "위시랜드", url: "https://www.wishwishwishwishwishland.com/" }],
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     bullets: [
       "모델별 결과·비용을 비교해 provider를 선별하고, provider별 큐·웹훅으로 긴 생성 작업을 웹 요청에서 분리",
       "토스페이먼츠 결제와 크레딧 차감, 상품·생성·결제 이력과 영수증을 확인하는 Admin, Slack 결제 알림",
-      "Locust로 가상 사용자 **1,000명** 동시 생성 시나리오를 3회 실행해 **이중 과금 경로**와 DB 병목(커넥션 풀 9 → 25) 수정",
-      "내부 생성 기록 934건 중 **911건 성공** (97.5%)",
+      "Locust로 가상 사용자 ==1,000명== 동시 생성 시나리오를 3회 실행해 **이중 과금 경로**와 DB 병목(커넥션 풀 9 → 25) 수정",
+      "내부 생성 기록 934건 중 ==911건== 성공 (97.5%)",
     ],
     tech: ["Next.js", "NestJS", "PostgreSQL", "AWS", "Toss Payments", "Locust", "Tailwind CSS v4"],
     links: [{ label: "umzik.com", url: "https://umzik.com" }],
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     bullets: [
       "이동 실패 시 상태 유지, 자기 자신·자손 가방으로의 순환 중첩 방지",
       "Custom Inspector에서 포켓 배치·수납 규칙을 편집하고 미리보기·Undo 지원",
-      "테스트 **125건**(Edit 101 · Play 24), Asset Store 심사 제출",
+      "테스트 ==125건==(Edit 101 · Play 24), Asset Store 심사 제출",
     ],
     tech: ["Unity", "C#", "uGUI", "ScriptableObject", "Unity Test Framework"],
     links: [
