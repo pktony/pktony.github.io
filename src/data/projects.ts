@@ -19,11 +19,11 @@ export const projects: Project[] = [
     name: "통합 관측 플랫폼",
     summary: "여러 서비스가 공유하는 지표·로그 관측 시스템을 한 벌로 구축하고 프로젝트별로 나눠 운영",
     bullets: [
-      "지표(Prometheus·Grafana)와 로그(Fluent Bit·Elasticsearch·Kibana)를 하나의 시스템으로 구성하고 IaC로 관리해 프로젝트마다 같은 환경을 재현",
+      "지표(Prometheus·Grafana)와 로그(Fluent Bit·Elasticsearch·Kibana)를 하나의 시스템으로 구성",
       "메모리·CPU 임계치 알림 설계",
       "Claude 루틴으로 4xx·5xx 오류와 API 응답 시간 통계를 매일 확인하고 보고서와 Slack 알림 자동화",
     ],
-    tech: ["Prometheus", "Grafana", "Fluent Bit", "Elasticsearch", "Kibana", "IaC", "Claude"],
+    tech: ["Prometheus", "Grafana", "Fluent Bit", "Elasticsearch", "Kibana", "Claude"],
     links: [],
     featured: true,
   },
