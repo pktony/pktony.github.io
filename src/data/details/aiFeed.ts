@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/resume";
+import { aiFeedGraph } from "./aiFeedGraph";
 
 export const aiFeedDetail: ProjectDetail = {
   sections: [
@@ -13,9 +14,10 @@ export const aiFeedDetail: ProjectDetail = {
       title: "생성과 실행을 나눈 흐름",
       bullets: [
         "행동을 결정한 뒤 게시글·댓글은 생성하고 **가이드라인 검수**를 통과한 것만 실행. 거절되면 실행 없이 종료",
-        "반응은 생성이 필요 없어 바로 실행",
+        "반응(좋아요)은 생성이 필요 없어 바로 실행",
         "프롬프트·설정 변경은 dev에서 검증한 뒤 live에 반영하도록 환경을 분리",
       ],
+      graph: aiFeedGraph,
     },
   ],
 };

@@ -1,0 +1,41 @@
+import type { FlowGraphData } from "@/types/resume";
+
+// 피드 봇 LangGraph 처리 흐름. 좌표는 viewBox(715x1090) 기준
+export const aiFeedGraph: FlowGraphData = {
+  width: 715,
+  height: 1090,
+  maxWidth: 520,
+  alt: "피드 봇 처리 흐름도. 봇 정보를 조회하고 행동을 결정한 뒤, 좋아요는 바로 실행하고 게시글과 댓글은 생성 후 검수하여 승인되면 실행하며 거절되면 오류 처리 후 종료한다. 모든 실행은 로그를 남기고 끝난다",
+  caption: "LangGraph 처리 흐름: 좋아요는 바로 실행, 게시글·댓글은 생성 후 검수를 통과해야 실행",
+  nodes: [
+    { id: "start", label: "START", x: 144, y: 71, w: 82, h: 82, shape: "circle" },
+    { id: "fetch", label: "fetch_agent", x: 94, y: 194, w: 182, h: 66 },
+    { id: "decide", label: "decide_action", x: 150, y: 301, w: 202, h: 66 },
+    { id: "post", label: "generate_post", x: 132, y: 482, w: 205, h: 66 },
+    { id: "reply", label: "generate_reply", x: 378, y: 482, w: 209, h: 66 },
+    { id: "like", label: "press_like", x: 62, y: 589, w: 165, h: 67 },
+    { id: "moderate", label: "moderate_content", x: 320, y: 589, w: 243, h: 67 },
+    { id: "feed", label: "create_feed", x: 258, y: 810, w: 182, h: 66 },
+    { id: "createReply", label: "create_reply", x: 480, y: 810, w: 185, h: 66 },
+    { id: "error", label: "handle_error", x: 50, y: 938, w: 189, h: 66 },
+    { id: "log", label: "update_log", x: 441, y: 938, w: 175, h: 66 },
+    { id: "end", label: "END", x: 124, y: 1044, w: 60, h: 60, shape: "circle" },
+  ],
+  edges: [
+    { path: "M185 153 V194" },
+    { path: "M185 260 V280 H251 V301" },
+    { path: "M200 367 V385 H110 V565 H144 V589", label: { text: "PRESS_LIKE", x: 110, y: 425 } },
+    { path: "M251 367 V450 H234 V482", label: { text: "WRITE_POST", x: 251, y: 425 } },
+    { path: "M340 367 V388 H482 V482", label: { text: "REPLY", x: 482, y: 425 } },
+    { path: "M234 548 V565 H400 V589" },
+    { path: "M482 548 V589" },
+    { path: "M380 656 V696 H144 V938", label: { text: "not approved", x: 144, y: 752 } },
+    { path: "M441 656 V720 H349 V810", label: { text: "WRITE_POST approved", x: 349, y: 752 } },
+    { path: "M520 656 V676 H572 V810", label: { text: "REPLY approved", x: 572, y: 752 } },
+    { path: "M144 656 V672 H235 V903 H528 V938" },
+    { path: "M349 876 V892 H500 V938" },
+    { path: "M572 876 V938" },
+    { path: "M528 1004 V1024 H168 V1044" },
+    { path: "M144 1004 V1024 H154 V1044" },
+  ],
+};

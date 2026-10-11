@@ -6,7 +6,10 @@ export type Credential = { title: string; period: string };
 export type SkillGroup = { label: string; items: string[] };
 export type DetailImage = { src: string; alt: string; width: number; height: number; caption?: string };
 export type DetailVideo = { youtubeId: string; title: string; caption?: string };
-export type DetailSection = { title: string; bullets: string[]; videos?: DetailVideo[]; images?: DetailImage[] };
+export type FlowNode = { id: string; label: string; x: number; y: number; w: number; h: number; shape?: "rect" | "circle" };
+export type FlowEdge = { path: string; label?: { text: string; x: number; y: number } };
+export type FlowGraphData = { width: number; height: number; maxWidth?: number; alt: string; caption?: string; nodes: FlowNode[]; edges: FlowEdge[] };
+export type DetailSection = { title: string; bullets: string[]; videos?: DetailVideo[]; images?: DetailImage[]; graph?: FlowGraphData };
 export type ProjectDetail = { sections: DetailSection[] };
 export type ProjectLink = { label: string; url: string };
 

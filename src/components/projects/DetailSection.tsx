@@ -1,9 +1,10 @@
 import { BulletList } from "@/components/ui/BulletList";
 import type { DetailSection as DetailSectionData } from "@/types/resume";
 import { DetailImages } from "./DetailImages";
+import { FlowGraph } from "./FlowGraph";
 import { DetailVideo } from "./DetailVideo";
 
-// 모달 안 소제목 하나: 제목 + 불릿 + 영상 + 사진
+// 모달 안 소제목 하나: 제목 + 불릿 + 영상 + 사진 + 흐름도
 export function DetailSection({ section }: { section: DetailSectionData }) {
   return (
     <section className="mt-8 first:mt-0">
@@ -15,6 +16,11 @@ export function DetailSection({ section }: { section: DetailSectionData }) {
         </div>
       ))}
       {section.images && <DetailImages images={section.images} />}
+      {section.graph && (
+        <div className="mt-4">
+          <FlowGraph graph={section.graph} />
+        </div>
+      )}
     </section>
   );
 }
