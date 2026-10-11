@@ -94,7 +94,7 @@ export const projects: Project[] = [
     bullets: [
       "이동 실패 시 상태 유지, 자기 자신·자손 가방으로의 순환 중첩 방지",
       "Custom Inspector에서 포켓 배치·수납 규칙을 편집하고 미리보기·Undo 지원",
-      "테스트 ==125건==(Edit 101 · Play 24), Asset Store 심사 제출",
+      "**Unity Test Framework**로 자동 테스트 ==125건==(Edit Mode 101 · Play Mode 24) 통과, Asset Store 심사 제출",
     ],
     tech: ["Unity", "C#", "uGUI", "ScriptableObject", "Unity Test Framework"],
     links: [
