@@ -69,9 +69,12 @@ export const projectGroups: ProjectGroup[] = [
       }),
       sub({
         name: "마이크로서비스 전환",
-        summary: "Node.js·JavaScript 단일 서버를 NestJS·TypeScript 기반 19개 서비스로 전환",
-        bullets: ["개발자 4명이 단일 서버를 NestJS·TypeScript 기반 ==19개== 서비스로 분리·전환. 일부 도메인 개발과 최종 MR 검토"],
-        tech: ["NestJS", "TypeScript", "Node.js"],
+        summary: "Node.js·JavaScript 단일 서버를 NestJS·TypeScript 기반 19개 서비스로 전환하고 Helm 기반 Kubernetes로 운영",
+        bullets: [
+          "개발자 4명이 단일 서버를 NestJS·TypeScript 기반 ==19개== 서비스로 분리·전환. 일부 도메인 개발과 최종 MR 검토",
+          "분리한 서비스를 **Helm** 기반 **Kubernetes**로 배포·운영",
+        ],
+        tech: ["NestJS", "TypeScript", "Node.js", "Kubernetes", "Helm"],
       }),
       sub({
         name: "배포·운영 병목 제거",
@@ -80,7 +83,7 @@ export const projectGroups: ProjectGroup[] = [
         bullets: [
           "피드를 Next.js 웹뷰로 전환하고 Unity와 Web 양방향 브릿지 프로토콜을 설계해 콘텐츠 반영 ==3일 → 5분==",
           "DB → CMS → S3·CloudFront → 클라이언트 구조로 룰렛·배너·공지·미션을 스키마화해 시즌 콘텐츠를 빌드·심사 없이 즉시 반영",
-          "iOS·Android 빌드를 ==8개== 파이프라인으로 자동화해 약 25분간 PC를 점유하던 로컬 빌드 제거. Slack, Firebase App Distribution, TestFlight 연동",
+          "4개 프로젝트의 iOS·Android 빌드를 ==8개== 파이프라인으로 자동화해 약 25분간 PC를 점유하던 로컬 빌드 제거. 연간 ==2,000회+== 빌드를 운영. Slack, Firebase App Distribution, TestFlight 연동",
         ],
         tech: ["Next.js", "Tailwind CSS v4", "Vercel", "CMS", "S3", "CloudFront", "Jenkins"],
       }),
