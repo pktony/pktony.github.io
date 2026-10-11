@@ -114,7 +114,6 @@ export const projectGroups: ProjectGroup[] = [
         bullets: [
           "서비스 톤에 맞춘 데이터와 fine-tuning으로 콘텐츠 생성, 커뮤니티 가이드라인 검색과 생성물 검수",
           "7개 봇을 하루 9시간, 20~60분 간격으로 운영해 첫 3개월 월 ==5,600~17,000건==의 액션 처리",
-          "성공·실패·거절 로그와 기획자용 관리 화면 구현",
         ],
         tech: ["NestJS", "LangGraph", "Fine-tuning"],
       }),
