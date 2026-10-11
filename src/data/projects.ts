@@ -92,7 +92,6 @@ export const projects: Project[] = [
     role: "설계, 구현, 제작 도구, 테스트",
     summary: "Escape from Tarkov 스타일 격자 인벤토리 시스템. 중첩 가방·독립 포켓·수납 제한·스택을 지원하는 Unity 패키지",
     bullets: [
-      "이동 실패 시 상태 유지, 자기 자신·자손 가방으로의 순환 중첩 방지",
       "Custom Inspector에서 포켓 배치·수납 규칙을 편집하고 미리보기·Undo 지원",
       "**Unity Test Framework**로 자동 테스트 ==125건==(Edit Mode 101 · Play Mode 24) 통과, Asset Store 심사 제출",
     ],
