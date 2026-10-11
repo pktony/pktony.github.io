@@ -8,7 +8,8 @@ import { ProjectIcon } from "./ProjectIcon";
 type ProjectDetailButtonProps = { name: string; subtitle?: string; icon?: string; children: ReactNode };
 
 // "상세 보기" 버튼과 그 모달. 상태(열림 여부)만 책임지고, 모달 안 내용은 children이 정한다.
-// 닫으면 내용을 내려서(영상 재생기 포함) 백그라운드 재생과 불필요한 로딩을 막는다
+// 닫으면 내용을 내려서(영상 재생기 포함) 백그라운드 재생과 불필요한 로딩을 막는다.
+// 버튼은 PDF에도 보여 상세가 더 있음을 알린다(모달 자체는 인쇄하지 않는다)
 export function ProjectDetailButton({ name, subtitle, icon, children }: ProjectDetailButtonProps) {
   const [open, setOpen] = useState(false);
   return (
@@ -17,7 +18,7 @@ export function ProjectDetailButton({ name, subtitle, icon, children }: ProjectD
         type="button"
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
-        className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-meta font-semibold text-muted hover:border-accent hover:text-accent print:hidden"
+        className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-meta font-semibold text-muted hover:border-accent hover:text-accent print:mt-3 print:min-h-0 print:py-0.5 print:text-caption"
       >
         상세 보기
         <ExpandIcon size={16} />

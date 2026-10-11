@@ -7,7 +7,7 @@ const linkClass =
 
 export function SiteFooter({ name, email, siteUrl, year }: SiteFooterProps) {
   return (
-    <footer className="mt-24 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line pt-6 text-meta text-muted">
+    <footer className="mt-24 print:mt-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line pt-6 text-meta text-muted">
       <p>
         © {year} {name}
       </p>
