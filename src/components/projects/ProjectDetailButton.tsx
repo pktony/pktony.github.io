@@ -7,7 +7,8 @@ import { ProjectIcon } from "./ProjectIcon";
 
 type ProjectDetailButtonProps = { name: string; subtitle?: string; icon?: string; children: ReactNode };
 
-// "상세 보기" 버튼과 그 모달. 상태(열림 여부)만 책임지고, 모달 안 내용은 children이 정한다
+// "상세 보기" 버튼과 그 모달. 상태(열림 여부)만 책임지고, 모달 안 내용은 children이 정한다.
+// 닫으면 내용을 내려서(영상 재생기 포함) 백그라운드 재생과 불필요한 로딩을 막는다
 export function ProjectDetailButton({ name, subtitle, icon, children }: ProjectDetailButtonProps) {
   const [open, setOpen] = useState(false);
   return (
@@ -28,7 +29,7 @@ export function ProjectDetailButton({ name, subtitle, icon, children }: ProjectD
         subtitle={subtitle}
         leading={icon ? <ProjectIcon src={icon} /> : undefined}
       >
-        {children}
+        {open ? children : null}
       </Dialog>
     </>
   );

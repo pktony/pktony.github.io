@@ -5,7 +5,8 @@ export type NavItem = { href: string; label: string };
 export type Credential = { title: string; period: string };
 export type SkillGroup = { label: string; items: string[] };
 export type DetailImage = { src: string; alt: string; width: number; height: number; caption?: string };
-export type DetailSection = { title: string; bullets: string[]; images?: DetailImage[] };
+export type DetailVideo = { youtubeId: string; title: string; caption?: string };
+export type DetailSection = { title: string; bullets: string[]; videos?: DetailVideo[]; images?: DetailImage[] };
 export type ProjectDetail = { sections: DetailSection[] };
 export type ProjectLink = { label: string; url: string };
 
