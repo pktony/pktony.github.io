@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import { ExpandIcon } from "@/components/icons/ExpandIcon";
 import { Dialog } from "@/components/ui/Dialog";
+import { trackEvent } from "@/lib/analytics";
 import { ProjectIcon } from "./ProjectIcon";
 
 type ProjectDetailButtonProps = { name: string; subtitle?: string; icon?: string; children: ReactNode };
@@ -17,7 +18,10 @@ export function ProjectDetailButton({ name, subtitle, icon, children }: ProjectD
       <button
         type="button"
         aria-haspopup="dialog"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          trackEvent("view_project_detail", { project: name });
+          setOpen(true);
+        }}
         className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-meta font-semibold text-muted hover:border-accent hover:text-accent print:mt-3 print:min-h-0 print:py-0.5 print:text-caption"
       >
         상세 보기

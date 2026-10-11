@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { profile } from "@/data/profile";
+import { Analytics } from "@/components/layout/Analytics";
 
 export const metadata: Metadata = {
   title: `${profile.name} | Portfolio`,
@@ -25,7 +26,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href={PRETENDARD} />
         <link rel="stylesheet" href={JETBRAINS_MONO} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
