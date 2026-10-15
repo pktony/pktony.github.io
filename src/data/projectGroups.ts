@@ -73,6 +73,7 @@ export const projectGroups: ProjectGroup[] = [
         bullets: [
           "개발자 4명이 단일 서버를 NestJS·TypeScript 기반 ==19개== 서비스로 분리·전환. 일부 도메인 개발과 최종 MR 검토",
           "분리한 서비스를 **Helm** 기반 **Kubernetes**로 배포·운영",
+          "레포가 늘어난 만큼 코드, 네이밍, Git Flow 규칙을 정리해 **AI 에이전트 하네스**로 구성",
         ],
         tech: ["NestJS", "TypeScript", "Node.js", "Kubernetes", "Helm"],
       }),
