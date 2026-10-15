@@ -117,7 +117,7 @@ export const projectGroups: ProjectGroup[] = [
         summary: "콘텐츠 생성과 실행을 분리한 LangGraph 워크플로로 피드 봇 7개를 운영",
         bullets: [
           "서비스 톤에 맞춘 데이터와 fine-tuning으로 콘텐츠 생성, 커뮤니티 가이드라인 검색과 생성물 검수",
-          "7개 봇을 하루 9시간, 20~60분 간격으로 운영해 첫 3개월 월 ==5,600~17,000건==의 액션 처리",
+          "7개 봇을 하루 9시간, 20~60분 간격으로 운영해 첫 3개월 누적 ==5,600~17,000건==의 액션 처리",
         ],
         tech: ["NestJS", "LangGraph", "Fine-tuning"],
       }),
