@@ -51,7 +51,7 @@ export const projectGroups: ProjectGroup[] = [
         bullets: [
           "**셰이더:** Asset Bundle 간 중복 셰이더를 Shared Shader Bundle로 통합하고 Stripping과 ShaderVariantCollection 워밍업 적용. Shader 메모리 ==0.83GB → 약 1MB==, 에셋번들 로드 시 셰이더로 인한 크래시 ==제로==",
           "**데이터:** 역직렬화 GC 스파이크를 데이터 포맷 문제로 판단해 아바타 스키마를 JSON에서 Protobuf로 전환(gzip·FlatBuffers 검토 후 선택). GC 스파이크 제거, 에셋 용량 ==70%== 절감",
-          "**UI:** SubCanvas 분리, 비동기 재활용 스크롤, 2단 캐시 이미지 로더로 렌더링 피크 최대 ==50%== 감소, 텍스처 메모리 약 ==90%== 절감 (16MB → 약 1.5MB)",
+          "**UI:** SubCanvas 분리, 비동기 재활용 스크롤, 2단 캐시 이미지 로더로 Canvas 갱신 시간 ==58%== 감소(Deep Profiling 기준), 텍스처 메모리 약 ==90%== 절감 (16MB → 약 1.5MB)",
         ],
         tech: ["Unity", "Addressables", "Asset Bundle", "URP", "Protobuf", "Profiler"],
       }),
@@ -104,7 +104,7 @@ export const projectGroups: ProjectGroup[] = [
         period: "2026.02 ~ 2026.04",
         summary: "query embedding과 semantic cache로 매 요청의 모델 실행을 줄인 텍스트 → 애니메이션 서비스",
         bullets: [
-          "정규화한 입력으로 캐시를 조회하고 miss일 때만 추론해 생성 지연 ==15초 → 3초==",
+          "정규화한 입력으로 캐시를 조회하고 miss일 때만 추론해 hit 시 ==약 3초==(miss 약 15초)로 응답",
           "프롬프트 표준화, cache builder와 threshold 조정 도구 구현",
           "SMPL-H 52 joints를 Unity Humanoid 22 joints로 리타게팅하고 MediaPipe 영상에서 애니메이션 추출",
         ],
