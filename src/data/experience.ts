@@ -3,7 +3,7 @@ import type { Experience } from "@/types/resume";
 export const experience: Experience[] = [
   {
     company: "일루니",
-    role: "개발2팀 팀장",
+    role: "개발2팀 팀장 (2025.07~)",
     period: "2023.02 ~ 현재",
     badges: ["Unity Client", "Backend", "DevOps", "AI", "Team Lead"],
     bullets: [
