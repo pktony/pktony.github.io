@@ -49,7 +49,7 @@ export const projectGroups: ProjectGroup[] = [
         period: "2025.09 ~ 2026.02",
         summary: "메모리·GC·렌더링 병목을 프로파일링으로 찾아 구조 단위로 해결",
         bullets: [
-          "**셰이더:** Asset Bundle 간 중복 셰이더를 Shared Shader Bundle로 통합하고 Stripping과 ShaderVariantCollection 워밍업 적용. Shader 메모리 ==0.83GB → 약 1MB==, 에셋번들 로드 시 셰이더로 인한 크래시 ==제로==",
+          "**셰이더:** Asset Bundle 간 중복 셰이더를 Shared Shader Bundle로 통합하고 Stripping과 ShaderVariantCollection 워밍업 적용. 아바타 2명 로드 기준 Shader 메모리 ==0.83GB → 약 1MB==, 에셋번들 로드 시 셰이더 크래시 ==제거==",
           "**데이터:** 역직렬화 GC 스파이크를 데이터 포맷 문제로 판단해 아바타 스키마를 JSON에서 Protobuf로 전환(gzip·FlatBuffers 검토 후 선택). GC 스파이크 제거, 에셋 용량 ==70%== 절감",
           "**UI:** SubCanvas 분리, 비동기 재활용 스크롤, 2단 캐시 이미지 로더로 Canvas 갱신 시간 ==58%== 감소(Deep Profiling 기준), 텍스처 메모리 약 ==90%== 절감 (16MB → 약 1.5MB)",
         ],
@@ -82,9 +82,9 @@ export const projectGroups: ProjectGroup[] = [
         period: "2024.12 ~ 2026.01",
         summary: "앱 빌드와 스토어 심사에 묶여 있던 반영 과정을 줄이고 비개발자가 직접 운영하게 함",
         bullets: [
-          "피드를 Next.js 웹뷰로 전환해 콘텐츠 반영 ==3일 → 5분==. Unity가 WebSocket 연결을 맡아 결과를 웹뷰에 전달하고, TypeScript·C# 메시지 타입을 대응시킨 통일 프로토콜로 중복 처리를 방지",
+          "피드를 Next.js 웹뷰로 전환해 콘텐츠 반영 ==최대 3일 → 5분==. Unity가 WebSocket 연결을 맡아 결과를 웹뷰에 전달하고, TypeScript·C# 메시지 타입을 대응시킨 통일 프로토콜로 중복 처리를 방지",
           "DB → CMS → S3·CloudFront → 클라이언트 구조로 룰렛·배너·공지·미션을 스키마화해 시즌 콘텐츠를 빌드·심사 없이 즉시 반영",
-          "4개 프로젝트의 iOS·Android 빌드를 ==8개== 파이프라인으로 자동화해 약 25분간 PC를 점유하던 로컬 빌드 제거. 연간 ==2,000회+== 빌드를 운영. Slack, Firebase App Distribution, TestFlight 연동",
+          "4개 프로젝트의 iOS·Android 빌드를 ==8개== 파이프라인으로 자동화해 약 25분간 PC를 점유하던 로컬 빌드 제거. 연간 ==2,000회 이상== 빌드를 운영. Slack, Firebase App Distribution, TestFlight 연동",
         ],
         tech: ["Next.js", "Tailwind CSS v4", "Vercel", "CMS", "S3", "CloudFront", "Jenkins"],
       }),

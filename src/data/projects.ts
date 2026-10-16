@@ -11,7 +11,7 @@ export const projects: Project[] = [
     details: matzipmapDetail,
     icon: "/project-icons/matzipmap.webp",
     period: "2026.07 ~ 현재",
-    summary: "방송·유튜브 맛집 3,000+곳을 모은 지도 서비스. 광고비 0원으로 MAU 약 4.4만 명",
+    summary: "방송·유튜브 맛집 3,000곳 이상을 모은 지도 서비스. 광고비 0원으로 MAU 약 4.4만 명",
     bullets: [
       "GitHub Actions와 LLM으로 자동 수집하고 네이버 지역검색과 대조해 검수 대기로 등록하는 흐름을 구축. 검수 에이전트가 매일 승인·반려·보류를 판단",
       "DB 부하를 줄이려 지도 조회에 엣지 캐싱을 적용하고, 필터와 클러스터링을 서버 메모리에서 처리",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     bullets: [
       "모델별 결과·비용을 비교해 provider를 선별하고, provider별 큐·웹훅으로 긴 생성 작업을 웹 요청에서 분리",
       "토스페이먼츠 결제와 크레딧 차감, 상품·생성·결제 이력과 영수증을 확인하는 Admin, Slack 결제 알림",
-      "Locust로 가상 사용자 ==1,000명== 동시 생성 시나리오 3개를 실행해 DB 병목(커넥션 풀 9 → 25) 수정",
+      "Locust로 가상 사용자 ==1,000명== 동시 생성 시나리오 3개를 실행해 커넥션 풀을 늘려 DB 병목 수정",
       "내부 생성 기록 934건 중 ==911건== 성공 (97.5%)",
     ],
     tech: ["Next.js", "NestJS", "PostgreSQL", "AWS", "Toss Payments", "Locust", "Tailwind CSS v4"],
