@@ -16,6 +16,15 @@ export const moiimeDetail: ProjectDetail = {
         "에셋에 **라벨**을 붙여 자연어 파츠 검색에 활용",
         "버전별 에셋을 볼 수 있는 **에셋 뷰어** 제공",
       ],
+      images: [
+        {
+          src: "/project-details/moiime/ai-stylist.webp",
+          alt: "아바타 편집 화면. 오른쪽 AI 스타일리스트 패널에 '크리스마스 스타일로 바꿔줘' 요청과 바뀐 원피스·모자 파츠, 응답·검색 시간이 표시됨",
+          width: 1200,
+          height: 581,
+          caption: "자연어로 파츠를 바꾸는 AI 스타일리스트",
+        },
+      ],
     },
     {
       title: "에셋 암호화",
