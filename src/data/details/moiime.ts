@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const moiimeDetail: ProjectDetail = {
+  id: "moiime",
   sections: [
     {
       title: "해시 기반 에셋 버전 관리와 증분 빌드",

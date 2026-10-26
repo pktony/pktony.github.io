@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const multiplayerWorldDetail: ProjectDetail = {
+  id: "multiplayer-world",
   sections: [
     {
       title: "끊김 없는 이동: 보간과 외삽 설계",

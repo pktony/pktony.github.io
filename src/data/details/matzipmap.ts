@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const matzipmapDetail: ProjectDetail = {
+  id: "matzipmap",
   sections: [
     {
       title: "인프라와 지도 조회 비용",

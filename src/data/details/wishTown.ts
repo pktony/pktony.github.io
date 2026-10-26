@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const wishTownDetail: ProjectDetail = {
+  id: "wish-town",
   sections: [
     {
       title: "프로모션 페이지에 삽입된 위젯",

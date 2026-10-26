@@ -2,6 +2,7 @@ import type { ProjectDetail } from "@/types/resume";
 
 // 글 없이 앱 화면만 보여준다
 export const avatarCustomizationDetail: ProjectDetail = {
+  id: "avatar-customization",
   sections: [
     {
       title: "앱 내 커스터마이징 화면",

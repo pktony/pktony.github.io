@@ -2,6 +2,7 @@ import type { ProjectDetail } from "@/types/resume";
 import { aiFeedGraph } from "./aiFeedGraph";
 
 export const aiFeedDetail: ProjectDetail = {
+  id: "ai-feed",
   sections: [
     {
       title: "멀티에이전트와 fine-tuning을 고른 이유",

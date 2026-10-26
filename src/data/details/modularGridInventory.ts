@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const modularGridInventoryDetail: ProjectDetail = {
+  id: "modular-grid-inventory",
   sections: [
     {
       title: "데모 영상",

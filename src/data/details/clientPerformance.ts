@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const clientPerformanceDetail: ProjectDetail = {
+  id: "client-performance",
   sections: [
     {
       title: "셰이더: 원인을 구조에서 찾기",

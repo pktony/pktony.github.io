@@ -10,7 +10,7 @@ export type FlowNode = { id: string; label: string; x: number; y: number; w: num
 export type FlowEdge = { path: string; label?: { text: string; x: number; y: number } };
 export type FlowGraphData = { width: number; height: number; maxWidth?: number; alt: string; caption?: string; nodes: FlowNode[]; edges: FlowEdge[] };
 export type DetailSection = { title: string; bullets: string[]; videos?: DetailVideo[]; images?: DetailImage[]; graph?: FlowGraphData };
-export type ProjectDetail = { sections: DetailSection[] };
+export type ProjectDetail = { id: string; sections: DetailSection[] };
 export type ProjectLink = { label: string; url: string };
 
 export type Photo = { src: string; alt: string; width: number; height: number };

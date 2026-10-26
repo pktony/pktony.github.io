@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const textToAnimationDetail: ProjectDetail = {
+  id: "text-to-animation",
   sections: [
     {
       title: "시맨틱 캐시 요청 흐름",

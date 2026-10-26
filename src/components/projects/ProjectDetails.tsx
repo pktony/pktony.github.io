@@ -1,4 +1,5 @@
 import type { ProjectDetail } from "@/types/resume";
+import { profile } from "@/data/profile";
 import { DetailSection } from "./DetailSection";
 import { ProjectDetailButton } from "./ProjectDetailButton";
 
@@ -8,7 +9,13 @@ type ProjectDetailsProps = { name: string; subtitle?: string; icon?: string; det
 export function ProjectDetails({ name, subtitle, icon, detail }: ProjectDetailsProps) {
   if (!detail || detail.sections.length === 0) return null;
   return (
-    <ProjectDetailButton name={name} subtitle={subtitle} icon={icon}>
+    <ProjectDetailButton
+      detailId={detail.id}
+      href={`${profile.siteUrl}/#detail-${detail.id}`}
+      name={name}
+      subtitle={subtitle}
+      icon={icon}
+    >
       {detail.sections.map((section) => (
         <DetailSection key={section.title} section={section} />
       ))}

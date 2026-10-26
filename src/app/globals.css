@@ -120,6 +120,7 @@
   section[id] { margin-top: calc(var(--spacing-section) * 0.625) !important; }
   a[href="#main"] { display: none; }
   #projects a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; font-weight: 400; color: var(--color-muted); }
+  #projects a[data-project-detail]::after { content: none; }
   /* 작은 항목만 쪽 중간에서 끊지 않는다. 한 쪽보다 큰 블록(article, 경력 항목)에 avoid를 걸면 빈 쪽이 생긴다 */
   li, dl > div { break-inside: avoid; }
   article, #experience ol > li, #projects li.grid { break-inside: auto; }

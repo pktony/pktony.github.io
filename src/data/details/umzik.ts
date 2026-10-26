@@ -1,6 +1,7 @@
 import type { ProjectDetail } from "@/types/resume";
 
 export const umzikDetail: ProjectDetail = {
+  id: "umzik",
   sections: [
     {
       title: "큐 기반 생성 파이프라인과 후처리 복구",
