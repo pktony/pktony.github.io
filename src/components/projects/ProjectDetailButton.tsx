@@ -24,23 +24,32 @@ export function ProjectDetailButton({ detailId, href, name, subtitle, icon, chil
 
   useEffect(() => {
     const syncFromUrl = () => {
-      const matches = window.location.hash === hash;
+      const selectedDetail = new URLSearchParams(window.location.search).get("detail");
+      const matches = selectedDetail ? selectedDetail === detailId : window.location.hash === hash;
       if (!matches) openedFromLink.current = false;
       setOpen(matches);
     };
     syncFromUrl();
     window.addEventListener("hashchange", syncFromUrl);
-    return () => window.removeEventListener("hashchange", syncFromUrl);
-  }, [hash]);
+    window.addEventListener("popstate", syncFromUrl);
+    return () => {
+      window.removeEventListener("hashchange", syncFromUrl);
+      window.removeEventListener("popstate", syncFromUrl);
+    };
+  }, [detailId, hash]);
 
   const close = () => {
     if (!open) return;
-    if (window.location.hash === hash) {
+    const url = new URL(window.location.href);
+    const selectedDetail = url.searchParams.get("detail");
+    if (selectedDetail === detailId || (!selectedDetail && url.hash === hash)) {
       if (openedFromLink.current) {
         window.history.back();
       } else {
         // PDF 등 외부 링크로 바로 접속했다면 이전 사이트로 보내지 않고 상세만 닫는다.
-        window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.search}#projects`);
+        url.searchParams.delete("detail");
+        url.hash = "projects";
+        window.history.replaceState(window.history.state, "", url);
       }
     }
     setOpen(false);
@@ -58,8 +67,11 @@ export function ProjectDetailButton({ detailId, href, name, subtitle, icon, chil
           if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
           event.preventDefault();
           trackEvent("view_project_detail", { project: name });
-          openedFromLink.current = window.location.hash !== hash;
-          window.location.hash = hash;
+          const url = new URL(window.location.href);
+          url.searchParams.set("detail", detailId);
+          url.hash = hash;
+          openedFromLink.current = url.href !== window.location.href;
+          if (openedFromLink.current) window.history.pushState(window.history.state, "", url);
           setOpen(true);
         }}
         className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-line px-4 text-meta font-semibold text-muted hover:border-accent hover:text-accent print:mt-3 print:min-h-0 print:py-0.5 print:text-caption"

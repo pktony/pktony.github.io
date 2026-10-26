@@ -11,7 +11,7 @@ export function ProjectDetails({ name, subtitle, icon, detail }: ProjectDetailsP
   return (
     <ProjectDetailButton
       detailId={detail.id}
-      href={`${profile.siteUrl}/#detail-${detail.id}`}
+      href={`${profile.siteUrl}/?detail=${encodeURIComponent(detail.id)}`}
       name={name}
       subtitle={subtitle}
       icon={icon}
