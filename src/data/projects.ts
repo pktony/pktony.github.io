@@ -11,7 +11,7 @@ export const projects: Project[] = [
     details: matzipmapDetail,
     icon: "/project-icons/matzipmap.webp",
     period: "2026.07 ~ 현재",
-    summary: "방송·유튜브 맛집 3,000곳 이상을 모은 지도 서비스. 광고비 0원으로 MAU 약 4.4만 명",
+    summary: "방송·유튜브 맛집 3,000곳 이상을 모은 지도 서비스. 광고비 0원으로 최고 MAU 약 6만 명(2026년 8월, GA4 기준)",
     bullets: [
       "GitHub Actions와 LLM으로 자동 수집하고 네이버 지역검색과 대조해 검수 대기로 등록하는 흐름을 구축. 검수 에이전트가 매일 승인·반려·보류를 판단",
       "DB 부하를 줄이려 지도 조회에 엣지 캐싱을 적용하고, 필터와 클러스터링을 서버 메모리에서 처리",
