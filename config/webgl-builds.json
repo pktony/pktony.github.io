@@ -1,5 +1,20 @@
 [
   {
+    "slug": "dialogue-flow",
+    "build": {
+      "id": "dialogue-web-20261028-1",
+      "url": "/webgl/dialogue-flow/dialogue-web-20261028-1/index.html",
+      "channel": "dialogue-flow",
+      "downloadBytes": 10497675
+    },
+    "artifact": {
+      "repository": "pktony/DialogueFlow-demo",
+      "tag": "webgl-demo-2026.10.28.1",
+      "file": "dialogue-flow-webgl-20261028-1.zip",
+      "sha256": "4c562172d1c856d04bc0ed1e40a0d071706b92d682b8a1113e20dc013da6760d"
+    }
+  },
+  {
     "slug": "modular-grid-inventory",
     "build": {
       "id": "inventory-web-20261028-2",

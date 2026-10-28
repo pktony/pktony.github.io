@@ -3,6 +3,17 @@ import webglBuilds from "../../config/webgl-builds.json";
 
 export const games: Game[] = [
   {
+    slug: "dialogue-flow",
+    name: "Dialogue Flow",
+    category: "RPG 대화 시스템",
+    summary: "선택지와 퀘스트에 따라 달라지는 대화, 실행 중인 그래프를 보여주는 탑뷰 RPG.",
+    status: "브라우저에서 플레이",
+    build: webglBuilds.find(entry => entry.slug === "dialogue-flow")?.build,
+    image: { src: "/games/images/dialogue-flow.jpg", alt: "영어 대화 선택지와 현재 실행 중인 그래프가 표시된 Dialogue Flow", width: 1712, height: 820 },
+    video: "https://youtu.be/jqX0dpysCXU",
+    source: "https://github.com/pktony/DialogueFlow",
+  },
+  {
     slug: "modular-grid-inventory",
     name: "Modular Grid Inventory",
     category: "인벤토리 시스템",

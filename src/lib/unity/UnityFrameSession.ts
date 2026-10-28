@@ -18,7 +18,7 @@ export class UnityFrameSession {
     await pendingDisposal;
     if (this.disposed || !this.host.isConnected) return;
     this.frame = document.createElement("iframe");
-    this.frame.title = "Modular Grid Inventory — 마우스와 키보드로 조작";
+    this.frame.title = `Unity (${this.build.channel}) — 마우스와 키보드로 조작`;
     this.frame.allow = "fullscreen";
     this.frame.allowFullscreen = true;
     this.frame.tabIndex = -1;
