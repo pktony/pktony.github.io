@@ -10,7 +10,8 @@ export function GameRouteFocus() {
     const target = hash.startsWith("game-") ? document.getElementById(hash) : document.querySelector<HTMLElement>("main h1");
     if (!target) return;
     if (target.tagName === "H1") target.tabIndex = -1;
-    target.focus({ preventScroll: true });
+    const frame = requestAnimationFrame(() => target.focus({ preventScroll: true }));
+    return () => cancelAnimationFrame(frame);
   }, [path]);
   return null;
 }
