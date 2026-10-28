@@ -33,6 +33,7 @@ export default function Home() {
         <PageTitle>{`${profile.name} 포트폴리오`}</PageTitle>
         <div id="top" />
         <IntroduceSection pdfFileTitle={`${profile.name} 포트폴리오`} photo={profile.photo} name={profile.name} title={profile.title} paragraphs={profile.intro} />
+        <p className="mt-block print:hidden"><a className="inline-flex min-h-11 items-center rounded-lg border border-line px-4 text-meta font-semibold text-accent hover:bg-card" href="/games/">게임 갤러리에서 프로젝트 둘러보기 →</a></p>
         <ExperienceSection items={experience} />
         <ProjectsSection groups={projectGroups} work={workProjects(projects)} personal={personalProjects(projects)} />
         <SkillsSection groups={skills} />
