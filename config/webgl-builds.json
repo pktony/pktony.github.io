@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "modular-grid-inventory",
+    "build": {
+      "id": "inventory-web-20261028-1",
+      "url": "/webgl/modular-grid-inventory/inventory-web-20261028-1/index.html",
+      "channel": "modular-grid-inventory",
+      "downloadBytes": 13515440
+    },
+    "artifact": {
+      "repository": "pktony/modular-grid-inventory",
+      "tag": "webgl-demo-2026.10.28.1",
+      "file": "modular-grid-inventory-webgl-20261028-1.zip",
+      "sha256": "45ccc3a3bbf7b4b7cd8899001a4ed321d7bb1f912eb842896cd1c1063c88217f"
+    }
+  }
+]

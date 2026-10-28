@@ -1,4 +1,5 @@
 import type { Game } from "@/types/game";
+import webglBuilds from "../../config/webgl-builds.json";
 
 export const games: Game[] = [
   {
@@ -7,7 +8,8 @@ export const games: Game[] = [
     category: "인벤토리 시스템",
     summary: "중첩 가방과 독립 포켓, 회전·스택을 지원하는 격자 인벤토리.",
     description: "가방마다 독립적인 내용물과 창을 갖습니다. 아이템 크기·스택 수량·수납 유형과 포켓 배치를 설정하고, 드롭한 위치에 맞춰 이동·회전·수납을 검증합니다.",
-    status: "WebGL 준비 중",
+    status: "브라우저에서 플레이",
+    build: webglBuilds.find(entry => entry.slug === "modular-grid-inventory")?.build,
     image: { src: "/games/images/inventory.webp", alt: "중첩 가방과 여러 인벤토리 창이 열린 실제 Unity 화면", width: 1920, height: 1080 },
     tags: ["중첩 컨테이너", "독립 포켓", "Custom Inspector"],
     controls: [
