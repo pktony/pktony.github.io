@@ -2,6 +2,21 @@
   {
     "slug": "modular-grid-inventory",
     "build": {
+      "id": "inventory-web-20261028-2",
+      "url": "/webgl/modular-grid-inventory/inventory-web-20261028-2/index.html",
+      "channel": "modular-grid-inventory",
+      "downloadBytes": 13518952
+    },
+    "artifact": {
+      "repository": "pktony/modular-grid-inventory",
+      "tag": "webgl-demo-2026.10.28.2",
+      "file": "modular-grid-inventory-webgl-20261028-2.zip",
+      "sha256": "0ecab3732807fd9d66c7f16eb39c2265f27f857a48b761cc19705cf8e7f9dea2"
+    }
+  },
+  {
+    "slug": "modular-grid-inventory",
+    "build": {
       "id": "inventory-web-20261028-1",
       "url": "/webgl/modular-grid-inventory/inventory-web-20261028-1/index.html",
       "channel": "modular-grid-inventory",

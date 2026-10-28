@@ -13,7 +13,6 @@ export function GameCard({ game }: { game: Game }) {
       <div className={styles.cardBody}>
         <span className={styles.cardType}>Unity · {game.category}</span>
         <h3>{game.name}</h3>
-        <p>{game.summary}</p>
         <div className={styles.cardBottom}>
           <span className={`${styles.status} ${game.build ? styles.accentStatus : ""}`}>{game.status}</span>
           <span className={styles.cardAction}>프로젝트 보기 <IconBase><path d="M5 12h14m-6-6 6 6-6 6" /></IconBase></span>

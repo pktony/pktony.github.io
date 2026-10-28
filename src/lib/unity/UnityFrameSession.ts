@@ -21,6 +21,7 @@ export class UnityFrameSession {
     this.frame.title = "Modular Grid Inventory — 마우스와 키보드로 조작";
     this.frame.allow = "fullscreen";
     this.frame.allowFullscreen = true;
+    this.frame.tabIndex = -1;
     this.frame.src = this.build.url;
     this.frame.addEventListener("error", this.fail);
     window.addEventListener("message", this.receive);
@@ -37,8 +38,8 @@ export class UnityFrameSession {
     if (message.type === "ready") {
       clearTimeout(this.timeout);
       this.phase = "running";
+      if (this.frame) this.frame.tabIndex = 0;
       this.onState({ phase: "running", progress: 1 });
-      if (document.activeElement === document.body) this.focus();
     }
     if (message.type === "error" || message.type === "stopped") this.fail();
   };
@@ -52,9 +53,6 @@ export class UnityFrameSession {
   };
 
   focus() { this.frame?.contentWindow?.postMessage({ channel: this.build.channel, type: "focus" }, location.origin); this.frame?.focus({ preventScroll: true }); }
-  async fullscreen() {
-    if (this.frame && this.phase === "running") await this.frame.requestFullscreen();
-  }
 
   dispose(waitForQuit = true): Promise<void> {
     if (this.disposal) return this.disposal;
