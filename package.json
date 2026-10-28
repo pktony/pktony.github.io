@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test": "tsc -p tsconfig.tests.json && node --test tests/*.test.mjs"
   },
   "dependencies": {
     "next": "^15.5.28",

@@ -3,6 +3,7 @@ import type { Game } from "@/types/game";
 import { GameControls } from "./GameControls";
 import { GamePreview } from "./GamePreview";
 import { GameResources } from "./GameResources";
+import { UnityPlayer } from "./UnityPlayer";
 import styles from "./games.module.css";
 
 export function GameDetail({ game }: { game: Game }) {
@@ -13,7 +14,7 @@ export function GameDetail({ game }: { game: Game }) {
       {game.controls && <span className={styles.platform}>데스크톱 · 마우스와 키보드</span>}
     </section>
     <div className={styles.playLayout}>
-      <GamePreview game={game} />
+      {game.build ? <UnityPlayer game={game} /> : <GamePreview game={game} />}
       <aside className={styles.rail} aria-label="조작과 자료">
         {game.controls ? <GameControls controls={game.controls} /> : <section><h2>공개 준비 중</h2><p>현재 {game.status}입니다. 웹 데모는 준비 후 연결합니다.</p></section>}
         <GameResources game={game} />

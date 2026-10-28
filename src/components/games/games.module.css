@@ -41,6 +41,18 @@
 .playLayout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: start; }
 .player { position: relative; aspect-ratio: 16 / 9; border: 1px solid #34443d; border-radius: 12px; overflow: hidden; background: #071110; color: #f4f7f6; }
 .previewImage { object-fit: contain; opacity: .24; }
+.frameHost { position: absolute; inset: 0; }
+.frameHost iframe { width: 100%; height: 100%; border: 0; display: block; }
+.playerBar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; min-height: 44px; }
+.runtimeStatus, .playerHint { font-size: 14px; color: var(--color-muted); }
+.playerActions { display: flex; gap: 8px; }
+.playerActions .button { padding: 8px 12px; }
+.button:disabled { opacity: .55; cursor: default; }
+.progress { width: min(220px, 100%); height: 6px; accent-color: #b9c7ff; display: block; margin: 0 auto 16px; }
+.overlay .downloadHint { margin: 14px 0 0; font-size: 12px; }
+.errorActions { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.playerAlt { color: #edf0ff; text-decoration: underline; text-underline-offset: 4px; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+.playerHint { margin-top: 12px; }
 .overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; background: #07111055; }
 .overlay > div { max-width: 380px; }
 .overlay h2 { font-size: 25px; margin-bottom: 12px; color: #f4f7f6; }
@@ -99,6 +111,7 @@
   .detailHeading h1 { font-size: 28px; }
   .back { margin-bottom: 16px; }
   .player { aspect-ratio: 4 / 3; }
+  .playerBar { flex-direction: column; align-items: flex-start; }
   .overlay { padding: 20px; }
   .overlay h2 { font-size: 22px; }
   .rail { display: block; }
