@@ -3,18 +3,22 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ExpandIcon } from "@/components/icons/ExpandIcon";
+import { IconBase } from "@/components/icons/IconBase";
 import { UnityFrameSession, type UnityState } from "@/lib/unity/UnityFrameSession";
 import type { Game } from "@/types/game";
 import { UnityPlayerOverlay } from "./UnityPlayerOverlay";
 import { useDesktopPointer } from "./useDesktopPointer";
+import { usePlayerFullscreen } from "./usePlayerFullscreen";
+import { GameToolbar } from "./GameToolbar";
 import styles from "./games.module.css";
 
 export function UnityPlayer({ game }: { game: Game }) {
   const desktop = useDesktopPointer();
+  const workspace = useRef<HTMLElement>(null);
+  const fullscreen = usePlayerFullscreen(workspace);
   const host = useRef<HTMLDivElement>(null);
   const session = useRef<UnityFrameSession | null>(null);
   const [state, setState] = useState<UnityState | null>(null);
-  const [fullscreenError, setFullscreenError] = useState("");
   const [stopping, setStopping] = useState(false);
   const mounted = useRef(true);
   const operation = useRef(0);
@@ -23,7 +27,7 @@ export function UnityPlayer({ game }: { game: Game }) {
     mounted.current = true;
     const leave = () => { void session.current?.dispose(false); session.current = null; };
     const restore = (event: PageTransitionEvent) => {
-      if (event.persisted) { operation.current++; setState(null); setStopping(false); setFullscreenError(""); }
+      if (event.persisted) { operation.current++; setState(null); setStopping(false); }
     };
     window.addEventListener("pagehide", leave);
     window.addEventListener("pageshow", restore);
@@ -37,7 +41,7 @@ export function UnityPlayer({ game }: { game: Game }) {
     setStopping(true);
     await current?.dispose();
     if (mounted.current) {
-      setState(null); setStopping(false); setFullscreenError("");
+      setState(null); setStopping(false);
       requestAnimationFrame(() => host.current?.parentElement?.querySelector<HTMLElement>("button,a")?.focus({ preventScroll: true }));
     }
   }
@@ -57,27 +61,29 @@ export function UnityPlayer({ game }: { game: Game }) {
     void current.start();
   }
 
-  async function fullscreen() {
-    try { await session.current?.fullscreen(); setFullscreenError(""); }
-    catch { setFullscreenError("전체 화면을 사용할 수 없습니다. 새 창 실행을 이용해 주세요."); }
-  }
-
   const phase = state?.phase ?? "idle";
-  const status = stopping ? "데모 종료 중" : phase === "running" ? "실행 중 · 플레이어를 클릭한 뒤 조작하세요." : phase === "loading" ? "데모 로딩 중" : phase === "error" ? "불러오기 실패 · 재시도 또는 영상 보기" : desktop ? "시작 전 · 마우스와 키보드 필요" : "모바일에서는 시연 영상 제공";
+  const status = stopping ? "종료 중" : phase === "running" ? "실행 중" : phase === "loading" ? "로딩 중" : phase === "error" ? "불러오기 실패" : "시작 전";
+  const previousFullscreen = useRef(fullscreen.active);
+  useEffect(() => {
+    const changed = previousFullscreen.current !== fullscreen.active;
+    previousFullscreen.current = fullscreen.active;
+    if (phase === "running" && (changed || document.activeElement === document.body)) session.current?.focus();
+  }, [phase, fullscreen.active]);
 
-  return <section aria-label={`${game.name} 플레이어`}>
+  return <section ref={workspace} className={styles.workspace} aria-label={`${game.name} 플레이어`}>
+    <GameToolbar game={game} actions={<>
+      {state && <button className={styles.button} disabled={stopping} onClick={stop}>{stopping ? "종료 중" : "종료"}</button>}
+      {(phase === "running" || fullscreen.active) && <button className={styles.button} aria-label={fullscreen.active ? "전체 화면 종료" : "플레이어 전체 화면"} aria-pressed={fullscreen.active} onClick={fullscreen.toggle}>
+        {fullscreen.active ? <IconBase><path d="M3 9h6V3m12 12h-6v6M9 9 3 3m12 12 6 6" /></IconBase> : <ExpandIcon />}
+        <span className={styles.fullscreenLabel}>{fullscreen.active ? "화면 복귀" : "전체 화면"}</span>
+      </button>}
+    </>} />
+    {fullscreen.error && <p className={styles.notice} role="alert">{fullscreen.error}</p>}
     <div className={styles.player} aria-busy={phase === "loading"}>
-      <Image src={game.image.src} alt={game.image.alt} fill sizes="(max-width: 850px) 100vw, 75vw" className={styles.previewImage} priority />
-      <div ref={host} className={styles.frameHost} />
+      {!state && <Image src={game.image.src} alt={game.image.alt} fill sizes="100vw" className={styles.previewImage} priority />}
+      <div ref={host} className={`${styles.frameHost} ${phase === "running" ? styles.frameReady : ""}`} aria-hidden={phase !== "running"} />
       <UnityPlayerOverlay game={game} desktop={desktop} state={state} onStart={start} />
     </div>
-    <div className={styles.playerBar}>
-      <span role={phase === "error" ? "alert" : "status"} aria-atomic="true" className={styles.runtimeStatus}>{fullscreenError || status}</span>
-      {state && <div className={styles.playerActions}>
-        <button className={styles.button} disabled={stopping} onClick={stop}>{stopping ? "종료 중" : "데모 종료"}</button>
-        {phase === "running" && <button className={styles.button} aria-label="플레이어 전체 화면" onClick={fullscreen}><ExpandIcon /></button>}
-      </div>}
-    </div>
-    {phase === "running" && <p className={styles.playerHint}>전체 화면으로 넓게 체험할 수 있습니다. 게임 안의 RESET으로 아이템 배치를 초기화하세요.</p>}
+    <span role="status" aria-atomic="true" className="sr-only">{status}</span>
   </section>;
 }

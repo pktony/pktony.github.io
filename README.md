@@ -22,7 +22,7 @@
 ## 게임 갤러리
 
 - `/games/`: 프로젝트 목록. 문구·화면·상태는 `src/data/games.ts`에서 편집
-- `/games/[slug]/`: 소개·조작 안내와 수동 시작 WebGL 플레이어
+- `/games/[slug]/`: 화면을 채우는 WebGL 플레이어와 상단 도구 모음
 - `config/webgl-builds.json`: 실행할 Unity Release 버전·SHA-256·빌드 주소
 - Unity 바이너리는 소스에 넣지 않고 Release ZIP을 검증한 뒤 `out/webgl/`에 조립
 
