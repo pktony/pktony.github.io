@@ -51,7 +51,7 @@ export class UnityFrameSession {
     void this.dispose();
   };
 
-  focus() { this.frame?.contentWindow?.postMessage({ channel: this.build.channel, type: "focus" }, location.origin); this.frame?.focus(); }
+  focus() { this.frame?.contentWindow?.postMessage({ channel: this.build.channel, type: "focus" }, location.origin); this.frame?.focus({ preventScroll: true }); }
   async fullscreen() {
     if (this.frame && this.phase === "running") await this.frame.requestFullscreen();
   }
