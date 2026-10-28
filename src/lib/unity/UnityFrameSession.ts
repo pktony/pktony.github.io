@@ -62,7 +62,7 @@ export class UnityFrameSession {
     clearTimeout(this.timeout);
     const frame = this.frame;
     if (!frame) return Promise.resolve();
-    frame.hidden = true;
+    frame.style.pointerEvents = "none";
     frame.tabIndex = -1;
     frame.setAttribute("aria-hidden", "true");
     this.disposal = new Promise<void>(resolve => {

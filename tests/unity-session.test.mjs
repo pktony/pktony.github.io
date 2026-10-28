@@ -11,7 +11,7 @@ function environment() {
   globalThis.document = {
     body: {}, activeElement: {},
     createElement: () => ({
-      contentWindow: { postMessage() {} }, isConnected: false,
+      contentWindow: { postMessage() {} }, isConnected: false, style: {},
       addEventListener() {}, removeEventListener() {}, setAttribute() {}, focus() {},
       remove() { this.isConnected = false; frames.splice(frames.indexOf(this), 1); },
     }),
