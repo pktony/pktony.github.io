@@ -29,8 +29,10 @@ export const games: Game[] = [
     name: "숲속 유적 행성",
     category: "3인칭 파쿠르",
     summary: "작은 행성의 중력을 따라 숲속 유적을 탐험하는 파쿠르.",
-    status: "개발 중",
-    image: { src: "/games/images/planet.webp", alt: "숲속 유적 행성 파쿠르 게임의 실제 Unity 화면", width: 1920, height: 1080 },
+    status: "브라우저에서 플레이",
+    build: webglBuilds.find(entry => entry.slug === "planet")?.build,
+    image: { src: "/games/images/planet-20261101.png", alt: "긴 달리기 지형과 넓은 구조물로 연결된 숲속 유적 행성의 실제 Unity 화면", width: 904, height: 877 },
+    video: "/games/videos/planet-20261101.mp4",
   },
   {
     slug: "stack-up",

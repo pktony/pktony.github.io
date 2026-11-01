@@ -1,5 +1,20 @@
 [
   {
+    "slug": "planet",
+    "build": {
+      "id": "planet-web-20261101-1",
+      "url": "/webgl/planet/planet-web-20261101-1/index.html",
+      "channel": "planet",
+      "downloadBytes": 26355476
+    },
+    "artifact": {
+      "repository": "pktony/pktony.github.io",
+      "tag": "webgl-planet-2026.11.01.1",
+      "file": "planet-webgl-20261101-1.zip",
+      "sha256": "2941d0dd8fcf2eff5b830b6027f686a844501ee37b097e61068878199ebfa034"
+    }
+  },
+  {
     "slug": "dialogue-flow",
     "build": {
       "id": "dialogue-web-20261028-1",
