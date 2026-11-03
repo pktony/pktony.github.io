@@ -2,6 +2,21 @@
   {
     "slug": "planet",
     "build": {
+      "id": "planet-web-20261103-2",
+      "url": "/webgl/planet/planet-web-20261103-2/index.html",
+      "channel": "planet",
+      "downloadBytes": 25790345
+    },
+    "artifact": {
+      "repository": "pktony/pktony.github.io",
+      "tag": "webgl-planet-2026.11.03.2",
+      "file": "planet-webgl-20261103-2.zip",
+      "sha256": "704621025a42e8380df77948bf5e14b927de41702775c6c96c89e7a20847ae31"
+    }
+  },
+  {
+    "slug": "planet",
+    "build": {
       "id": "planet-web-20261103-1",
       "url": "/webgl/planet/planet-web-20261103-1/index.html",
       "channel": "planet",
