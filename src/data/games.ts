@@ -31,8 +31,8 @@ export const games: Game[] = [
     summary: "작은 행성의 벽과 난간을 붙잡고 오르며 도약하는 3인칭 파쿠르.",
     status: "브라우저에서 플레이",
     build: webglBuilds.find(entry => entry.slug === "planet")?.build,
-    image: { src: "/games/images/planet-hand-climb-20261103.png", alt: "손으로 유적 벽을 붙잡고 Shift로 빠르게 이동하는 실제 Unity 플레이 화면", width: 904, height: 877 },
-    video: "/games/videos/planet-hand-climb-20261103.mp4",
+    image: { src: "/games/images/planet-smooth-traversal-20261103.png", alt: "유적 벽에서 손과 발을 옮겨 이동하는 실제 Unity 플레이 화면", width: 904, height: 877 },
+    video: "/games/videos/planet-smooth-traversal-20261103.mp4",
   },
   {
     slug: "stack-up",
