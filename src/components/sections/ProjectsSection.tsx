@@ -10,10 +10,10 @@ export function ProjectsSection({ groups, work, personal }: ProjectsSectionProps
   return (
     <Section id="projects" title="Projects">
       <div className="space-y-14">
+        <ProjectList projects={work} level={3} />
         {groups.map((g) => (
           <ProjectGroupBlock key={g.title} group={g} />
         ))}
-        <ProjectList projects={work} level={3} />
       </div>
       {personal.length > 0 && (
         <>
