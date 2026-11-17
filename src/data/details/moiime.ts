@@ -4,7 +4,7 @@ export const moiimeDetail: ProjectDetail = {
   id: "moiime",
   sections: [
     {
-      title: "Blender·Unity에서 바로 쓰기",
+      title: "Blender·Unity 본 리타게팅",
       bullets: [
         "**대상별 내보내기:** Blender·Mixamo용은 Mixamo 본 이름(mixamorig:Hips)으로, Unity용은 접두어 없는 이름으로 내보내 Humanoid 리그로 설정. 받은 파일에 Mixamo 애니메이션이 변환 없이 붙음",
         "**리그 구성:** 표준 본 ==52개==(몸 22, 손가락 30)와 표정 블렌드셰이프 ==52개==. 모자·머리카락 흔들림용 본은 파츠에 따라 추가",
@@ -31,7 +31,7 @@ export const moiimeDetail: ProjectDetail = {
       ],
     },
     {
-      title: "문장으로 파츠 찾기",
+      title: "자연어로 캐릭터 제작",
       bullets: [
         "**성별에 맞지 않는 옷:** 프롬프트에 규칙을 넣어도 남성 캐릭터에 스커트가 10% 섞여 코드 필터로 막음. 사용자가 직접 요청한 옷(\"하이힐 신겨줘\")은 막지 않도록, 코디를 맡긴 경우에만 적용",
         "**없는 컨셉:** \"마녀\"를 요청하면 유사도가 낮은 루돌프 옷이 1위로 나옴. 유사도가 낮으면 컨셉 색으로 다시 찾고 소품은 뺌",
