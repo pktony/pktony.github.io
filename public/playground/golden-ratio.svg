@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Golden Ratio 얼굴 황금비율 분석 시각화">
+  <defs>
+    <pattern id="grid-gr" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e2130" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow-gr" cx="50%" cy="48%" r="48%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#08090c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="#08090c"/>
+  <rect width="800" height="500" fill="url(#grid-gr)"/>
+  <rect width="800" height="500" fill="url(#glow-gr)"/>
+
+  <!-- 5-division eye ratio vertical guides -->
+  <g stroke="#00e5ff" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="5 5">
+    <line x1="250" y1="88" x2="250" y2="395"/>
+    <line x1="310" y1="88" x2="310" y2="395"/>
+    <line x1="370" y1="88" x2="370" y2="395"/>
+    <line x1="430" y1="88" x2="430" y2="395"/>
+    <line x1="490" y1="88" x2="490" y2="395"/>
+    <line x1="550" y1="88" x2="550" y2="395"/>
+  </g>
+
+  <!-- Nose-Mouth-Chin horizontal guides (amber) -->
+  <g stroke="#ffb84d" stroke-opacity="0.65" stroke-width="1.5" stroke-dasharray="6 4">
+    <line x1="220" y1="268" x2="580" y2="268"/>
+    <line x1="220" y1="308" x2="580" y2="308"/>
+    <line x1="220" y1="380" x2="580" y2="380"/>
+  </g>
+
+  <!-- Face bounding box -->
+  <rect x="242" y="96" width="316" height="316" rx="14" fill="none" stroke="#39ff8e" stroke-width="2" stroke-opacity="0.8"/>
+  <path d="M242 126 V96 H272 M528 96 H558 V126 M242 382 V412 H272 M528 412 H558 V382" fill="none" stroke="#39ff8e" stroke-width="3.5"/>
+
+  <!-- Stylized face landmark mesh -->
+  <g fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.8">
+    <path d="M400 118 C472 118 525 170 524 248 C523 324 468 380 400 380 C332 380 277 324 276 248 C275 170 328 118 400 118 Z"/>
+    <path d="M312 205 Q340 190 368 205 Q340 218 312 205 Z"/>
+    <path d="M432 205 Q460 190 488 205 Q460 218 432 205 Z"/>
+    <path d="M400 192 L386 266 L414 266 Z"/>
+    <path d="M358 308 Q400 326 442 308 Q400 300 358 308 Z"/>
+    <line x1="400" y1="118" x2="400" y2="380" stroke-opacity="0.4"/>
+    <line x1="276" y1="205" x2="524" y2="205" stroke-opacity="0.35"/>
+  </g>
+
+  <!-- Landmark nodes -->
+  <g fill="#00e5ff">
+    <circle cx="312" cy="205" r="3.5"/>
+    <circle cx="368" cy="205" r="3.5"/>
+    <circle cx="432" cy="205" r="3.5"/>
+    <circle cx="488" cy="205" r="3.5"/>
+    <circle cx="400" cy="268" r="4" fill="#ffb84d"/>
+    <circle cx="400" cy="308" r="4" fill="#ffb84d"/>
+    <circle cx="400" cy="380" r="4" fill="#ffb84d"/>
+    <circle cx="276" cy="248" r="3"/>
+    <circle cx="524" cy="248" r="3"/>
+  </g>
+
+  <!-- Badges -->
+  <rect x="32" y="30" width="164" height="32" rx="8" fill="#12141a" stroke="#00e5ff" stroke-opacity="0.5"/>
+  <text x="114" y="51" text-anchor="middle" fill="#00e5ff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" font-weight="700">PHI · 1 : 1.618</text>
+
+  <rect x="614" y="30" width="154" height="32" rx="8" fill="#12141a" stroke="#39ff8e" stroke-opacity="0.5"/>
+  <text x="691" y="51" text-anchor="middle" fill="#39ff8e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="600">FACE LANDMARKER</text>
+
+  <text x="400" y="464" text-anchor="middle" fill="#8890a4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">5-DIVISION EYE RATIO  ·  NOSE-LIP-CHIN VECTOR</text>
+</svg>

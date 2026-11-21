@@ -1,0 +1,35 @@
+.galleryTwo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.sectionBlock + .sectionBlock {
+  margin-top: 48px;
+}
+
+.introSub {
+  margin-top: 10px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+.cardSummary {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.cardTitleTight {
+  margin-bottom: 8px !important;
+}
+
+@media (max-width: 720px) {
+  .galleryTwo {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

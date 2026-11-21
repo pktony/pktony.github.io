@@ -9,11 +9,14 @@
     "test": "tsc -p tsconfig.tests.json && node --test tests/*.test.mjs"
   },
   "dependencies": {
+    "@mediapipe/tasks-vision": "^1.2.3",
     "next": "^15.5.28",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
-  "overrides": { "postcss": "8.5.32" },
+  "overrides": {
+    "postcss": "8.5.32"
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.0",
     "@types/node": "^22.0.0",

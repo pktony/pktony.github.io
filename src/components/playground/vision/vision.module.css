@@ -1,0 +1,92 @@
+.visionRoot {
+  --bg-primary: #08090c;
+  --bg-secondary: #0e1015;
+  --bg-card: #12141a;
+  --bg-card-hover: #181b23;
+  --border-subtle: #1e2130;
+  --border-active: #2a3050;
+  --text-primary: #e8eaf0;
+  --text-secondary: #a1a8bc;
+  --text-muted: #7d85a1;
+  --accent-cyan: #00e5ff;
+  --accent-cyan-dim: #00e5ff28;
+  --accent-green: #39ff8e;
+  --accent-green-dim: #39ff8e22;
+  --accent-amber: #ffb84d;
+  --accent-amber-dim: #ffb84d24;
+  --accent-red: #ff4d6a;
+  --accent-red-dim: #ff4d6a26;
+  --accent-violet: #a78bfa;
+  --accent-violet-dim: #a78bfa22;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: calc(100vh - 72px);
+}
+
+.visionContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 32px 56px;
+}
+
+.pulseDot {
+  animation: visionPulseDot 2s ease-in-out infinite;
+}
+
+@keyframes visionPulseDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.fadeUp {
+  animation: visionFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes visionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visionRoot input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-subtle);
+  outline: none;
+  touch-action: manipulation;
+}
+
+.visionRoot input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+.visionRoot input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+}
+
+@media (max-width: 600px) {
+  .visionContainer {
+    padding: 20px 16px 40px;
+  }
+}

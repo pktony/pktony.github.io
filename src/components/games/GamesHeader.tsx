@@ -7,6 +7,7 @@ export function GamesHeader() {
       <a className={styles.brand} href="/" aria-label="박상원 포트폴리오 홈">박상원<span>.</span></a>
       <nav aria-label="주 메뉴">
         <a href="/">포트폴리오</a>
+        <a href="/playground/">Playground</a>
         <a href="/games/" aria-current="page">게임 갤러리</a>
         <ThemeToggle />
       </nav>
