@@ -3,6 +3,7 @@ import { ChipList } from "@/components/ui/ChipList";
 import type { Project } from "@/types/resume";
 import { ProjectDetails } from "./ProjectDetails";
 import { ProjectHeader } from "./ProjectHeader";
+import { ProjectHighlights } from "./ProjectHighlights";
 import { ProjectLinks } from "./ProjectLinks";
 
 type ProjectRowProps = { project: Project; level: 3 | 4 };
@@ -15,6 +16,7 @@ export function ProjectRow({ project: p, level }: ProjectRowProps) {
       <div>
         <ProjectHeader name={p.name} role={p.role} level={level} icon={p.icon} />
         <p className="mt-block text-body font-medium">{p.summary}</p>
+        <ProjectHighlights items={p.highlights} />
         <BulletList items={p.bullets} className="mt-block max-w-measure" />
         <ChipList items={p.tech} label="사용 기술" size="sm" className="mt-block" />
         <ProjectLinks links={p.links} />

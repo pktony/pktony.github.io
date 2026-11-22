@@ -126,7 +126,7 @@ export function BeobgyuFilterLab() {
                       className="max-w-[180px] truncate font-mono"
                       style={{ color: "var(--text-muted)", fontSize: "11px" }}
                     >
-                      — {fileName}
+                      · {fileName}
                     </span>
                   )}
                 </div>

@@ -16,9 +16,23 @@ export function ProjectDetails({ name, subtitle, icon, detail }: ProjectDetailsP
       subtitle={subtitle}
       icon={icon}
     >
-      {detail.sections.map((section) => (
-        <DetailSection key={section.title} section={section} />
-      ))}
+      {detail.highlights && detail.highlights.length > 0 && (
+        <dl
+          className={`mb-7 grid grid-cols-2 gap-2.5 ${detail.highlights.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-4"}`}
+        >
+          {detail.highlights.map((item) => (
+            <div key={item.label} className="rounded-xl border border-line bg-card px-3.5 py-3">
+              <dt className="text-caption text-muted">{item.label}</dt>
+              <dd className="mt-1 whitespace-nowrap font-mono text-body font-bold tabular-nums text-accent">{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      <div>
+        {detail.sections.map((section) => (
+          <DetailSection key={section.title} section={section} />
+        ))}
+      </div>
     </ProjectDetailButton>
   );
 }

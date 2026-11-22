@@ -3,6 +3,9 @@ import type { FlowGraphData } from "@/types/resume";
 const LABEL_CHAR_W = 8.6;
 const LABEL_PAD = 16;
 
+const estimateLabelWidth = (text: string) =>
+  Array.from(text).reduce((sum, ch) => sum + (/[\u3131-\uD7A3]/.test(ch) ? 13 : LABEL_CHAR_W), LABEL_PAD);
+
 // 노드와 선(직각 꺾임 경로)으로 이루어진 흐름도를 SVG로 그린다. 색은 사이트 토큰을 써서 라이트·다크에서 모두 보인다
 export function FlowGraph({ graph }: { graph: FlowGraphData }) {
   return (
@@ -43,7 +46,7 @@ export function FlowGraph({ graph }: { graph: FlowGraphData }) {
 
         {graph.edges.map((edge) => {
           if (!edge.label) return null;
-          const w = edge.label.text.length * LABEL_CHAR_W + LABEL_PAD;
+          const w = estimateLabelWidth(edge.label.text);
           return (
             <g key={`label-${edge.path}`}>
               <rect x={edge.label.x - w / 2} y={edge.label.y - 13} width={w} height={26} rx={5} className="fill-chip" />

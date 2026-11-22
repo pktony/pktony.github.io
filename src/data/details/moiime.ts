@@ -4,12 +4,11 @@ export const moiimeDetail: ProjectDetail = {
   id: "moiime",
   sections: [
     {
-      title: "자연어 캐릭터 제작 & 모델 평가·검색 최적화",
+      title: "자연어 캐릭터 제작 & 모델 평가",
       bullets: [
-        "**골든셋 121건 모델 벤치마크:** AI 채팅 파츠 변경 해석 단계를 121개 골든셋 문장으로 5개 모델(gpt-4o, gpt-6-luna, Claude Sonnet·Haiku, Gemini Flash·Lite)에서 동일 서비스 파이프라인으로 비교. 프롬프트 3회 개선으로 gpt-6-luna 적중률을 ==85% → 95%==(gpt-4o 96%와 동급)로 끌어올려 호출당 비용을 $0.0133 → $0.0003(==1/46==)으로 절감하고 폴백 후보까지 정량 검증",
-        "**없는 컨셉 대응:** \"마녀\"처럼 카탈로그에 없는 컨셉을 요청하면 유사도가 낮은 엉뚱한 옷이 1위로 나오는 문제를, 유사도 하한 미달 시 컨셉 색 기반 재검색과 소품 제외 규칙으로 보완",
-        "**하이브리드 파츠 검색 측정:** 테스트 질의 43건으로 첫 결과 정답률을 비교(키워드 93.0%, 의미 기반 88.4%, **둘을 합친 하이브리드** ==95.3%== 채택, 이미지 검색 합산 81.4% 제외)",
-        "**별도 검색 인프라를 두지 않은 이유:** 전체 검색 데이터가 1.5MB라 별도 벡터 DB 없이 서버 메모리에서 비교해도 ==1ms 미만==으로 응답",
+        "**모델 비교 & 튜닝:** 121건 골든셋으로 5개 LLM을 비교해 경량 모델 적중률을 ==95%==(상위 모델 동급)까지 높여 비용 절감",
+        "**없는 컨셉 대응:** 카탈로그에 없는 요청(\"마녀\" 등)은 유사도 하한 미달 시 컨셉 색 기반 재검색으로 보완",
+        "**하이브리드 검색:** 43건 측정으로 하이브리드(==95.3%==)를 채택, 데이터 1.5MB라 벡터 DB 없이 메모리에서 ==1ms 미만== 처리",
       ],
       images: [
         {
@@ -22,38 +21,70 @@ export const moiimeDetail: ProjectDetail = {
       ],
     },
     {
-      title: "유저용 생태계 배포 (MCP · Blender 애드온 · VRChat SDK)",
+      title: "외부 도구 연동 배포",
       bullets: [
-        "**OAuth 2.1 원격 MCP 서버 & 3D 위젯:** API 키 발급 장벽을 없애기 위해 OAuth 2.1(Authorization Code + PKCE S256) 기반 무상태 Streamable HTTP MCP 서버(moii.me/api/mcp)를 배포. 내 캐릭터 목록·파츠 검색·크레딧 조회와 MCP Apps 지원 앱용 3D 인터랙티브 위젯을 제공",
-        "**Blender 컨트롤 리그 애드온(v8):** Blender 4.2 이상용 확장으로 손발 IK, IK·FK 자세 유지 스냅, 뷰포트 Body·Face 피커, 얼굴 핸들, 머리카락·옷 흔들림 굽기를 제공. cdn.moii.me 확장 저장소 자동 업데이트, 기존 리그 업그레이드(Update Rig), 격리 프로필 자동 테스트를 구축",
-        "**VRChat 원클릭 변환 VPM 패키지(1.1.0):** Unity 2022.3·VRChat SDK 3.10.6 이상용 VPM 저장소(cdn.moii.me/vpm/index.json)로 배포. FBX 입력 한 번에 메시 병합·비셈 15종·깜빡임·얼굴 추적·손 제스처 7종 표정·액션 메뉴를 자동 구성",
+        "**원격 MCP & 3D 위젯:** API 키 대신 OAuth 2.1 로그인만으로 AI 앱에서 캐릭터 조회와 3D 미리보기를 바로 실행",
+        "**Blender 애드온:** 손발 IK·FK 스냅, Body·Face 피커, 흔들림 굽기와 자동 업데이트·격리 테스트까지 구축",
+        "**VRChat 패키지:** VPM 저장소 배포로 FBX 입력 한 번에 메시 병합·표정·입 모양·제스처 메뉴를 자동 세팅",
+      ],
+      images: [
+        {
+          src: "/project-details/moiime/mcp-3d-widget.webp",
+          alt: "AI 앱에서 '루돌프 보여줘' 요청 후 Moiime 원격 MCP 서버의 3D 미리보기 위젯이 렌더링된 화면",
+          width: 876,
+          height: 624,
+          full: true,
+          caption: "OAuth 2.1 로그인 후 AI 앱에서 3D 위젯으로 캐릭터를 바로 미리보는 화면",
+        },
+        {
+          src: "/project-details/moiime/blender-face-picker.webp",
+          alt: "Blender 4.2 이상에서 실행된 Moiime 컨트롤 리그 애드온 v8의 Face 피커와 얼굴 핸들 제어 화면",
+          width: 840,
+          height: 479,
+          caption: "Blender 컨트롤 리그 애드온(v8): Face 피커 및 얼굴 핸들",
+        },
+        {
+          src: "/project-details/moiime/blender-body-picker.webp",
+          alt: "Blender에서 실행된 Moiime 컨트롤 리그 애드온 v8의 Body 피커와 IK·FK 포즈 제어 화면",
+          width: 840,
+          height: 479,
+          caption: "Blender 컨트롤 리그 애드온(v8): Body 피커 및 IK·FK 포즈",
+        },
       ],
     },
     {
-      title: "해시 기반 에셋 관리 툴 & 프리뷰 보호 인프라",
+      title: "에셋 발행 · 프리뷰 보호 · 모니터링",
       bullets: [
-        "**로컬 CDN 미러 & 해시 증분 발행(asset-manager):** 사람이 붙인 버전의 동시 덮어쓰기 문제를 7자 content-hash 불변 릴리즈와 _manifest.json 증분 업로드(미변경 파일은 S3 내부 복사)로 잠금 없이 해결. NAS 에셋과 MongoDB 라벨·임베딩·뷰어 분류를 한곳에서 관리하며 하루 10회 이상 발행 중 덮어쓰기 사고 ==0건==",
-        "**발행 사고 방지 가드:** 부분 제외 옵션으로 썸네일이 유실됐던 운영 경험을 반영해 스택별 자격·섹션을 고정한 CLI(publish-stack.sh --dry-run)로 수동 조립 실수를 차단하고, 쓰기 전용 R&R과 NAS 원본 비삭제 원칙을 분리",
-        "**에셋 암호화 & 인증 서버(@moiime/sdk-auth):** 프리뷰 파츠와 애니메이션을 암호화(AES-128-CBC + HMAC)해 발행하고, 인증된 세션에만 복호 키를 발급. 키·세션은 환경별 Postgres에, 복호 키는 환경 공유 Atlas MongoDB에 두고 reader/writer 권한 분리와 EC2 Postgres loopback 잠금을 적용해 릴리즈 승격 시 키 재적재와 DB 노출 위험을 제거",
-        "**대량 다운로드 차단과 한계 인식:** 공개 키 하나로 2초 만에 파일 ==8,300개==를 받을 수 있음을 테스트로 확인해 CloudFront에서 _manifest.json·catalog 원본을 403 차단하고, 세션·키별 일일 한도와 Slack 알림을 관측 모드부터 단계 적용. 화면에 렌더되는 단건 추출은 완전 차단이 불가능하므로 대량 수집 감지와 워터마크로 대응",
+        "**해시 불변 발행:** 변경된 파일만 증분 업로드하고 사전 점검(dry-run)과 원본 비삭제 원칙으로 덮어쓰기 ==0건==",
+        "**프리뷰 에셋 보호:** 공개 키로 2초 만에 ==8,300개==가 뚫리던 구조를 암호화·목록 차단·세션 워터마크로 방어",
+        "**웹 Sentry 표준화:** 서버 에러와 노이즈를 거르고 개인정보 마스킹·소스맵 삭제를 적용해 UMZIK까지 확장",
+      ],
+      images: [
+        {
+          src: "/project-details/moiime/asset-manager-publish.webp",
+          alt: "에셋 관리 툴 발행 화면. 내용 해시 릴리즈와 파츠·썸네일·애니메이션 증분 복사 및 복호 키 적재 완료 상태가 표시됨",
+          width: 1024,
+          height: 640,
+          full: true,
+          caption: "에셋 관리 툴 발행 화면: 내용 해시 릴리즈, 변경분 증분 복사, 복호 키 적재 과정",
+        },
+        {
+          src: "/project-details/moiime/preview-watermark.webp",
+          alt: "얼굴, 몸통·팔·다리, 원피스 프리뷰 파츠에 세션별 식별 워터마크가 적용된 화면",
+          width: 961,
+          height: 346,
+          full: true,
+          caption: "프리뷰 에셋 보호: 세션별 식별 워터마크가 적용된 파츠 미리보기",
+        },
       ],
     },
     {
-      title: "프론트엔드 에러 모니터링 정책 설계 (Sentry)",
+      title: "애니메이션 리타게팅 & 회귀 검증",
       bullets: [
-        "**수집 경계 분리:** API·인증 서버는 기존 Grafana·로그가 담당하므로 서버 연동은 철회하고 브라우저(web) 에러만 수집하도록 범위를 분리",
-        "**단일 필터링 정책(errorPolicy.ts):** 서버 담당 5xx와 정상 권한 흐름인 401/403, 네트워크 단절·청크 로드 실패(앱 자동 리로드 처리)는 제외해 알림 피로를 차단. 4xx·타임아웃은 경로 ID를 정규화한 warning으로 묶고, React 19 ErrorBoundary 포착 에러는 fatal로 승격",
-        "**개인정보·소스맵 보안:** 쿠키·본문·쿼리·이메일·IP 수집을 전면 차단하고 로그인 ID만 SHA-256 앞 16자로 해싱. 소스맵은 Docker BuildKit secret으로 업로드한 직후 dist에서 이중 삭제해 노출을 방지",
-        "**쿼터·알림 통제와 표준화:** DSN rate limit(분당 100)과 Slack 빈도 제한(fatal 5분, 신규·재발 30분, warning 1시간 50건 초과 60분)으로 쿼터 소진을 막고, 같은 수집 정책 틀을 UMZIK 웹까지 확장 적용",
+        "**알고리즘 직접 구현:** Three.js 기본 리타게팅의 아바타 오염·관절 뒤틀림을 피하기 위해 클론 비파괴 추출과 상대 회전 변환을 구현",
+        "**정밀 검증 & 과금 유지:** Blender·Unity 대조로 정점 오차 ==1µm 미만==·회전 ==0°==를 확인하고, 3차 회귀 ==16/16== 통과와 재다운로드 과금 ==0==을 입증",
       ],
-    },
-    {
-      title: "외부 애니메이션 리타게팅 알고리즘 & 산출물 회귀 검증",
-      bullets: [
-        "**리타게팅 알고리즘 직접 구현(retargetExternalClip.ts):** Three.js 기본 SkeletonUtils.retargetClip은 타깃 스켈레톤을 파괴적으로 샘플링해 라이브 아바타를 오염시키고, 절대 월드 방향 복사로 Mixamo(T-pose·본별 축)와 Moiime(SMPL-H·Y축) 간 본이 뒤틀림. 클론에서 rest 포즈를 비파괴 추출한 뒤 rest-상대 월드 델타 쿼터니언 변환을 루트-상대 정규화해 Mixamo(22본)·SMPL-H(67본) 클립을 축 뒤틀림 없이 실시간 리타게팅",
-        "**정밀 수치 검증(Blender 5.2 · Unity 6.5):** GLB 3종·FBX 2종 산출물을 원본과 정점·렌더 대조해 몸·옷·얼굴 정점 최대 차이 ==1µm 미만==, Mixamo 5클립×9프레임 본 회전 오차 ==0°==를 확인하고, 헤어 부풂(13.8mm)·Hips 단위(×100) 결함까지 리포트로 포착",
-        "**실사용 16건 3차 회귀 검증 & 과금 무결성:** 실사용 캐릭터 8명×2옵션(16건)을 3차례 검증해 체인 본 단독 스킨 워커 크래시·재베이크 스케일 팽창(0.665→0.834m)·기존 저장본 bind 불일치(isDirty 게이트)를 순차 수정. 결과 버전 해시를 외형 값 기준으로 유지해 재베이크 후 재다운로드 크레딧 차감 ==0==, 전체 ==16/16== 성공과 Mixamo ==52/52== 본 연결을 검증",
-      ],
+      diagram: "moiime-retargeting",
     },
   ],
 };

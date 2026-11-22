@@ -2,14 +2,18 @@ import type { ProjectDetail } from "@/types/resume";
 
 export const clientPerformanceDetail: ProjectDetail = {
   id: "client-performance",
+  highlights: [
+    { label: "Shader 메모리", value: "0.83GB → 1MB" },
+    { label: "에셋 용량", value: "70% 절감" },
+    { label: "Canvas 갱신", value: "58% 단축" },
+    { label: "텍스처 메모리", value: "16 → 1.5MB" },
+  ],
   sections: [
     {
       title: "셰이더 중복 제거",
       bullets: [
-        "**번들링 구조 원인:** 원인은 셰이더 자체가 아니라 파츠 번들마다 셰이더 참조가 공유되지 않아 사본을 각자 포함한 구조였고, 번들 간 variant 불일치로 런타임 크래시도 발생",
-        "**공용 번들 통합 + variant 제거:** 공용 번들로 모으기만 하면 개수(==47개 → 6개==)만 줄고 사본 크기는 남으므로 통합과 미사용 variant 제거를 함께 적용해 메모리와 크래시를 동시에 해결",
-        "**파츠 Addressable 배제 이유:** 아바타 파츠까지 Addressable로 전환하는 안은 자체 포맷 전면 재작업이 필요해 공수가 과도하다고 판단. 셰이더만 공용 번들로 분리하고 카탈로그는 리소스 성격별로 분할",
-        "**셰이더 메모리 & 크래시 제거:** 아바타 2명 로드 기준 Shader 메모리 ==0.83GB → 약 1MB==, 런타임 셰이더 크래시 제거",
+        "**번들 중복 원인:** 파츠 번들마다 셰이더 사본이 중복 포함돼 메모리 폭증과 variant 불일치 크래시가 발생",
+        "**공용 번들 통합:** 파츠 전체를 바꾸는 대신 셰이더만 공용 번들로 통합하고 미사용 variant를 제거해 ==47개 → 6개==로 축소",
       ],
       images: [
         {
@@ -24,18 +28,15 @@ export const clientPerformanceDetail: ProjectDetail = {
     {
       title: "역직렬화 GC 스파이크 제거",
       bullets: [
-        "**데이터 포맷 원인:** JSON 역직렬화마다 GC 스파이크가 생겨 프레임 드롭과 발열로 이어지는 문제를, 파싱 코드가 아니라 문자열을 파싱해 객체를 생성하는 데이터 포맷 문제로 판단",
-        "**gzip·FlatBuffers 대신 Protobuf 선택:** gzip은 전송량만 줄고 역직렬화 할당은 그대로이며, FlatBuffers는 스키마 공유 도구가 빈약함. 서버·클라이언트가 같은 스키마에서 코드를 생성하고 성숙한 Protobuf를 선택",
-        "**평면 스키마 최적화:** 중첩 컬렉션은 원소마다 객체가 생겨 할당이 폭증하므로 map과 packed 평면 배열로 펴 정점 데이터를 연속 메모리에 저장. 에셋 용량 ==70%== 절감, GC 스파이크 제거",
+        "**포맷 전환 판단:** gzip은 할당량이 그대로고 FlatBuffers는 도구가 빈약해 서버·클라이언트 공용 스키마가 탄탄한 Protobuf를 채택",
+        "**평면 스키마:** 중첩 객체 할당을 없애기 위해 평면 배열 구조로 스키마를 펴 용량 ==70%== 절감 및 GC 스파이크 제거",
       ],
     },
     {
       title: "이미지 로드 프레임 드롭 해결",
       bullets: [
-        "**디코딩·Rebuild 병목:** 이미지 대량 로드 시 원본 1.48MB가 텍스처로 16MB를 차지하고, 일부 UI 변경이 전체 Canvas Rebuild를 일으켜 프레임이 떨어짐",
-        "**자체 비동기 로더 제작:** UnityWebRequestTexture는 mipmap과 포맷을 제어할 수 없고 LoadImage는 메인 스레드에서만 돌아 프레임이 멈추므로 비동기 이미지 로드 모듈을 직접 제작하고 알파 유무에 따라 RGB24와 RGBA32를 분리",
-        "**Rebuild 분리 & 2단 캐시:** SubCanvas로 Rebuild 범위를 축소하고, 비동기 재활용 스크롤·워커 스레드 디코딩·메모리(LRU)와 디스크 2단 캐시·동일 URL 중복 요청 병합을 적용",
-        "**프로파일러 검증:** Canvas 갱신 ==85.26ms → 36.05ms==(Deep Profiling 기준, 계측 오버헤드 포함), 텍스처 메모리 ==16MB → 약 1.5MB==",
+        "**자체 비동기 로더:** 메인 스레드 디코딩 병목을 없애고 알파 유무별 포맷 분리로 텍스처 메모리 ==16MB → 1.5MB== 절감",
+        "**Rebuild 최소화:** SubCanvas 분리, 재활용 스크롤, 메모리·디스크 2단 캐시와 중복 요청 병합을 적용",
       ],
       images: [
         {

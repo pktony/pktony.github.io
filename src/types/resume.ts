@@ -4,13 +4,14 @@ export type Social = { label: string; url: string; icon: SocialIconName };
 export type NavItem = { href: string; label: string };
 export type Credential = { title: string; period: string };
 export type SkillGroup = { label: string; items: string[] };
-export type DetailImage = { src: string; alt: string; width: number; height: number; caption?: string };
+export type DetailImage = { src: string; alt: string; width: number; height: number; caption?: string; full?: boolean };
 export type DetailVideo = { youtubeId: string; title: string; caption?: string };
 export type FlowNode = { id: string; label: string; x: number; y: number; w: number; h: number; shape?: "rect" | "circle" };
 export type FlowEdge = { path: string; label?: { text: string; x: number; y: number } };
 export type FlowGraphData = { width: number; height: number; maxWidth?: number; alt: string; caption?: string; nodes: FlowNode[]; edges: FlowEdge[] };
-export type DetailSection = { title: string; bullets: string[]; videos?: DetailVideo[]; images?: DetailImage[]; graph?: FlowGraphData };
-export type ProjectDetail = { id: string; sections: DetailSection[] };
+export type DetailDiagramId = "moiime-retargeting";
+export type DetailSection = { title: string; bullets: string[]; videos?: DetailVideo[]; images?: DetailImage[]; graph?: FlowGraphData; diagram?: DetailDiagramId };
+export type ProjectDetail = { id: string; highlights?: ServiceStat[]; sections: DetailSection[] };
 export type ProjectLink = { label: string; url: string };
 
 export type Photo = { src: string; alt: string; width: number; height: number };
@@ -42,6 +43,7 @@ export type Project = {
   period?: string;
   role?: string;
   summary: string;
+  highlights?: ServiceStat[];
   bullets: string[];
   tech: string[];
   links: ProjectLink[];
